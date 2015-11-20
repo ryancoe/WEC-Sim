@@ -1,12 +1,13 @@
 %% Simulation Data
 simu=simulationClass();
 simu.simMechanicsFile = 'FOSWEC.slx';
-simu.rampT = 10;
+simu.rampT = 20;
 simu.endTime = 40;
 simu.dt = 0.01;
 simu.mode = 'normal';
 simu.explorer = 'on';
 simu.domainSize = 2;
+simu.CITime=15;
 
 %% Wave Information
 %waves = waveClass('noWave');
@@ -14,22 +15,22 @@ simu.domainSize = 2;
 %
 waves = waveClass('regular');
 waves.T=2;
-waves.H=0.1;
+waves.H=0.05;
 %
 %waves = waveClass('noWaveCIC');
 
 %% Body Data
 %% Body 1: Platform
-body(1) = bodyClass('./hydroData/Analysis.h5',1);                     
-body(1).geometryFile = './geometry/platform.stl';
+body(1) = bodyClass('../hydroData/Analysis.h5',1);                     
+body(1).geometryFile = '../geometry/platform.stl';
 body(1).mass = 79.437181353569;    
 body(1).momOfInertia = [57.0431 47.211 66.2529];
 body(1).viz.color = [1 1 1];
 body(1).viz.opacity = 0.25;
 
 %% Body 2: Front Flap
-body(2) = bodyClass('./hydroData/Analysis.h5',2);                     
-body(2).geometryFile = './geometry/flap.stl';
+body(2) = bodyClass('../hydroData/Analysis.h5',2);                     
+body(2).geometryFile = '../geometry/flap.stl';
 body(2).mass = 13.5204596444964;     
 body(2).momOfInertia = [2.3664 1.0264 1.3736];
 %body(2).linearDamping(5) = 10;  
@@ -41,8 +42,8 @@ body(2).momOfInertia = [2.3664 1.0264 1.3736];
 %clear r alpha
 
 %% Body 3: Back Flap
-body(3) = bodyClass('./hydroData/Analysis.h5',3);                     
-body(3).geometryFile = './geometry/flap.stl';
+body(3) = bodyClass('../hydroData/Analysis.h5',3);                     
+body(3).geometryFile = '../geometry/flap.stl';
 body(3).mass = 13.5204596444964;     
 body(3).momOfInertia = [2.3664 1.0264 1.3736];
 
@@ -95,9 +96,6 @@ rectangleFrame.viz.color = [1 0 0];
 rectangleFrame.viz.opacity = 1;
 
 
-
-
-
 %% PTO and Constraint Parameters
 
 %% PTO 1
@@ -120,6 +118,7 @@ constraint(1).loc = [0 0 -0.5];
 %% Constraint 2
 constraint(2)= constraintClass('arm_surge');
 constraint(2).loc = [0 0 -0.5];
+constraint(2).mooring.k(1,1) = 100;
 
 %% Constraint 3
 constraint(3)= constraintClass('arm_pitch');

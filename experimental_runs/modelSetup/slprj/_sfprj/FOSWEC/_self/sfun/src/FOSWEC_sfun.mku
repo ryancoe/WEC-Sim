@@ -23,7 +23,7 @@ MLSLSF_INCLUDES  = \
     -I"/Applications/MATLAB_R2014b.app/simulink/include" \
     -I"/Applications/MATLAB_R2014b.app/stateflow/c/mex/include" \
     -I"/Applications/MATLAB_R2014b.app/rtw/c/src" \
-    -I"/Users/cmichel/Documents/WEC-SIM/git_global_wecsim_2/experimental_runs/hydrostatic/slprj/_sfprj/FOSWEC/_self/sfun/src" 
+    -I"/Users/yyu/Dropbox/WorksNREL/Research Work/WEC-SimValidationTest/experimental_runs/modelSetup/slprj/_sfprj/FOSWEC/_self/sfun/src" 
 
 THIRD_PARTY_INCLUDES = 
 
@@ -59,7 +59,7 @@ OBJLIST_FILE = FOSWEC_sfun.mol
 SFCLIB = 
 AUX_LNK_OBJS = 
 USER_LIBS = 
-LINK_MACHINE_LIBS = /Users/cmichel/Documents/WEC-SIM/git_global_wecsim_2/experimental_runs/hydrostatic/slprj/_sfprj/FOSWEC/WECSim_Lib/sfun/src/WECSim_Lib_sfun.a 
+LINK_MACHINE_LIBS = /Users/yyu/Dropbox/WorksNREL/Research\ Work/WEC-SimValidationTest/experimental_runs/modelSetup/slprj/_sfprj/FOSWEC/WECSim_Lib/sfun/src/WECSim_Lib_sfun.a 
 TMWLIB = -L/Applications/MATLAB_R2014b.app/bin/maci64 -lmwsf_runtime -L/Applications/MATLAB_R2014b.app/bin/maci64 -lfixedpoint -L/Applications/MATLAB_R2014b.app/bin/maci64 -lut -L/Applications/MATLAB_R2014b.app/bin/maci64 -lemlrt -L/Applications/MATLAB_R2014b.app/bin/maci64 -lmwmathutil -L/Applications/MATLAB_R2014b.app/bin/maci64 -lmwblas -L/Applications/MATLAB_R2014b.app/bin/maci64 -lmwsl_log_load_blocks -L/Applications/MATLAB_R2014b.app/bin/maci64 -lmwsimulink -L/Applications/MATLAB_R2014b.app/bin/maci64 -lmwipp 
 PARLIB = 
   MAPCSF = /Applications/MATLAB_R2014b.app/tools/maci64/mapcsf

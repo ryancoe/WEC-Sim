@@ -8,7 +8,7 @@ LD = $(CC)
  
 MACHINE     = WECSim_Lib
 TARGET      = sfun
-CHART_SRCS   = c8_WECSim_Lib.c
+CHART_SRCS   = c2_WECSim_Lib.c c8_WECSim_Lib.c
 MACHINE_SRC  = WECSim_Lib_sfun.c
 MACHINE_REG = 
 MAKEFILE    = WECSim_Lib_sfun.mku
@@ -23,7 +23,7 @@ MLSLSF_INCLUDES  = \
     -I"/Applications/MATLAB_R2014b.app/simulink/include" \
     -I"/Applications/MATLAB_R2014b.app/stateflow/c/mex/include" \
     -I"/Applications/MATLAB_R2014b.app/rtw/c/src" \
-    -I"/Users/cmichel/Documents/WEC-SIM/git_global_wecsim_2/experimental_runs/hydrostatic/slprj/_sfprj/FOSWEC/WECSim_Lib/sfun/src" 
+    -I"/Users/yyu/Dropbox/WorksNREL/Research Work/WEC-SimValidationTest/experimental_runs/modelSetup/slprj/_sfprj/FOSWEC/WECSim_Lib/sfun/src" 
 
 THIRD_PARTY_INCLUDES = 
 

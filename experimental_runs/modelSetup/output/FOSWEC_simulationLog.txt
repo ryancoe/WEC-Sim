@@ -1,37 +1,38 @@
 
 WEC-Sim Read Input File ...   
-Elapsed time is 5.767961 seconds.
+Elapsed time is 10.346456 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.070885 seconds.
+Elapsed time is 0.937682 seconds.
 
 WEC-Sim Simulation Settings:
 	Time Marching Solver                 = Fourth-Order Runge-Kutta Formula 
 	Start Time                     (sec) = 0
 	End Time                       (sec) = 40
 	Time Step Size                 (sec) = 0.01
-	Ramp Function Time             (sec) = 10
+	Ramp Function Time             (sec) = 20
+	Convolution Integral Interval  (sec) = 15
 	Total Number of Time Step            = 4000 
 
 Wave Environment: 
-	Wave Type                            = Regular Waves (Sinusoidal Steady-State)
-	Wave Height H (m)                    = 0.1
+	Wave Type                            = Regular Waves (Convolution Integral Calculation)
+	Wave Height H (m)                    = 0.05
 	Wave Period T (sec)                  = 2
 
 List of Body: Number of Bodies = 3 
 
 	***** Body Number 0, Name: body1 *****
-	Body CG                          (m) = [-0,0,-0.156]
+	Body CG                          (m) = [-0,0.537,-0.156]
 	Body Mass                       (kg) = 79.4372 
 	Body Diagonal MOI              (kgm2)= [57.0431,47.211,66.2529]
 
 	***** Body Number 1, Name: body2 *****
-	Body CG                          (m) = [-0.65,0,-0.338]
+	Body CG                          (m) = [-0.65,0.19,-0.338]
 	Body Mass                       (kg) = 13.5205 
 	Body Diagonal MOI              (kgm2)= [2.3664,1.0264,1.3736]
 
 	***** Body Number 2, Name: body3 *****
-	Body CG                          (m) = [0.65,0,-0.338]
+	Body CG                          (m) = [0.65,0.19,-0.338]
 	Body Mass                       (kg) = 13.5205 
 	Body Diagonal MOI              (kgm2)= [2.3664,1.0264,1.3736]
 
@@ -59,7 +60,7 @@ List of Constraint(s): Number of Constraints = 5
 
 
 Simulating the WEC device defined in the SimMechanics model FOSWEC.slx...   
-Elapsed time is 7.705983 seconds.
+Elapsed time is 159.061306 seconds.
 
 Post-processing and saving...   
-Elapsed time is 0.037140 seconds.
+Elapsed time is 0.087321 seconds.
