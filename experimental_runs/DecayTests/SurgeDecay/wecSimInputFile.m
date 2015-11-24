@@ -1,6 +1,6 @@
 %% Simulation Data
 simu=simulationClass();
-simu.simMechanicsFile = 'FOSWEC.slx';
+simu.simMechanicsFile = 'FOSWEC_Surge.slx';
 simu.rampT = 0;
 simu.endTime = 100;
 simu.dt = 0.05;
@@ -21,21 +21,21 @@ body(1).mass = 79.437181353569;
 body(1).momOfInertia = [57.0431 47.211 66.2529];
 body(1).viz.color = [1 1 1];
 body(1).viz.opacity = 0.25;
-% body(1).initDisp.initLinDisp(1);
+% body(1).initDisp.initLinDisp(1)
 
 %% Body 2: Front Flap
 body(2) = bodyClass('../../hydroData/Analysis.h5',2);                     
 body(2).geometryFile = '../../geometry/flap.stl';
 body(2).mass = 13.5204596444964;     
 body(2).momOfInertia = [2.3664 1.0264 1.3736];
-% body(2).initDisp.initLinDisp(1);
+% body(2).initDisp.initLinDisp(1)
 
 %% Body 3: Back Flap
 body(3) = bodyClass('../../hydroData/Analysis.h5',3);                     
 body(3).geometryFile = '../../geometry/flap.stl';
 body(3).mass = 13.5204596444964;     
 body(3).momOfInertia = [2.3664 1.0264 1.3736];
-% body(3).initDisp.initLinDisp(1);
+% body(3).initDisp.initLinDisp(1)
 
 %% Arm Mass Properties (UPDATED)
 %% Cyl Fixed - mounted to seafloor
@@ -70,7 +70,7 @@ rectangleFrame.mass = 23.66; %[kg] %%79.4;
 rectangleFrame.momOfInertia = [1.44 2.21 3.57]; %[kg-m^2] %%[1 1 1];
 rectangleFrame.cg = [0 0 -0.866+0.5]; %[m] %%[0 0 -0.5];
 rectangleFrame.dispVol = 0;
-% rectangleFrame.initDisp.initLinDisp
+% rectangleFrame.initDisp.initLinDisp(1)
 rectangleFrame.geometryFile = 'empty.stl';
 rectangleFrame.viz.color = [1 0 0];
 rectangleFrame.viz.opacity = 1;
@@ -84,7 +84,7 @@ constraint(1).loc = [0 0 -0.5];
 %% Constraint 2
 constraint(2)= constraintClass('arm_surge');
 constraint(2).loc = [0 0 -0.5];
-% constraint(2).mooring.initLinDispAngle
+% constraint(2).mooring.initLinDispAngle(1)
 constraint(2).mooring.k(1,1) = 100;
 
 %% Constraint 3
