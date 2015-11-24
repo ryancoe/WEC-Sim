@@ -1,1 +1,2 @@
 surge motion grows - add damping
+	-tried dt = 0.05 and 0.01, neither dt resolved issue
