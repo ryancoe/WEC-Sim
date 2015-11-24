@@ -12,7 +12,7 @@ tic
 fprintf('\nWEC-Sim Read Input File ...   \n'); 
 evalc('wecSimInputFile');
 
-% Multiple Condistions Run Input
+% Multiple Conditions Run Input
 if exist('mcr','var') == 1; 
    for n=1:length(mcr.cases(1,:))
      combine = sprintf('%s=%g',char(mcr.header{n}),mcr.cases(imcr,n));
