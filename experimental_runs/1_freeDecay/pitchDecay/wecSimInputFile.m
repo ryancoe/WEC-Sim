@@ -26,17 +26,20 @@ body(1).momOfInertia = [57.0431 47.211 66.2529];
 body(1).viz.color = [1 1 1];
 body(1).viz.opacity = 0.25;
 
-%pitch decay
-phi = 25 * pi/180;
-ic = [0,0,-0.366];
-cg1 = [0,0,-0.1560];
-relCoord = cg1 - ic;
-rotatedRelCoord = body(1).rotateXYZ(relCoord,[0 1 0],phi);
-newCoord = rotatedRelCoord + ic;
-linDisp = newCoord-cg1;
-body(1).initDisp.initLinDisp= linDisp; 
-body(1).initDisp.initAngularDispAxis = [0 1 0];
-body(1).initDisp.initAngularDispAngle = phi;
+% %pitch decay
+% cg1 = [0,0,-0.1560];
+% relCoord = cg1 - ic;
+% rotatedRelCoord = body(1).rotateXYZ(relCoord,[0 1 0],phi);
+% newCoord = rotatedRelCoord + ic;
+% linDisp = newCoord-cg1;
+% body(1).initDisp.initLinDisp= linDisp; 
+% body(1).initDisp.initAngularDispAxis = [0 1 0];
+% body(1).initDisp.initAngularDispAngle = phi;
+
+% phi = 25 * pi/180;
+% ic = [0,0,-0.366];
+% body(1).setInitDisp(ic,[0 1 0],phi,[0,0,0])
+% % body(1).initDisp.initLinDisp
 
 %% Body 2: Front Flap
 body(2) = bodyClass('../../hydroData/Analysis.h5',2);                     
@@ -44,16 +47,21 @@ body(2).geometryFile = '../../geometry/flap.stl';
 body(2).mass = 13.5204596444964;     
 body(2).momOfInertia = [2.3664 1.0264 1.3736];
 
-%pitch decay
+% %pitch decay
+% % ic = [0,0,-0.366];
+% cg2 = [-0.6500, 0, -0.3380];
+% relCoord = cg2 - ic;
+% rotatedRelCoord = body(2).rotateXYZ(relCoord,[0 1 0],phi);
+% newCoord = rotatedRelCoord + ic;
+% linDisp = newCoord-cg2;
+% body(2).initDisp.initLinDisp= linDisp; 
+% body(2).initDisp.initAngularDispAxis = [0 1 0];
+% body(2).initDisp.initAngularDispAngle = phi;
+
+% phi = 20 * pi/180;
 % ic = [0,0,-0.366];
-cg2 = [-0.6500, 0, -0.3380];
-relCoord = cg2 - ic;
-rotatedRelCoord = body(2).rotateXYZ(relCoord,[0 1 0],phi);
-newCoord = rotatedRelCoord + ic;
-linDisp = newCoord-cg2;
-body(2).initDisp.initLinDisp= linDisp; 
-body(2).initDisp.initAngularDispAxis = [0 1 0];
-body(2).initDisp.initAngularDispAngle = phi;
+% body(2).setInitDisp(ic,[0 1 0],phi,[0,0,0])
+% % body(2).initDisp.initLinDisp
 
 %% Body 3: Back Flap
 body(3) = bodyClass('../../hydroData/Analysis.h5',3);                     
@@ -61,15 +69,20 @@ body(3).geometryFile = '../../geometry/flap.stl';
 body(3).mass = 13.5204596444964;     
 body(3).momOfInertia = [2.3664 1.0264 1.3736];
 
-%pitch decay
+% %pitch decay
+% % ic = [0,0,-0.366];
+% cg3 = [0.6500, 0, -0.3380];
+% relCoord = cg3 - ic;
+% rotatedRelCoord = body(3).rotateXYZ(relCoord,[0 1 0],phi);
+% newCoord = rotatedRelCoord + ic;
+% linDisp = newCoord-cg3;
+% body(3).initDisp.initLinDisp= linDisp; body(3).initDisp.initAngularDispAxis = [0 1 0];
+% body(3).initDisp.initAngularDispAngle = phi;
+
+% phi = 20 * pi/180;
 % ic = [0,0,-0.366];
-cg3 = [0.6500, 0, -0.3380];
-relCoord = cg3 - ic;
-rotatedRelCoord = body(3).rotateXYZ(relCoord,[0 1 0],phi);
-newCoord = rotatedRelCoord + ic;
-linDisp = newCoord-cg3;
-body(3).initDisp.initLinDisp= linDisp; body(3).initDisp.initAngularDispAxis = [0 1 0];
-body(3).initDisp.initAngularDispAngle = phi;
+% body(3).setInitDisp(ic,[0 1 0],phi,[0,0,0])
+% % body(3).initDisp.initLinDisp
 
 %% Arm Mass Properties (UPDATED)
 %% Cyl Fixed - mounted to seafloor
