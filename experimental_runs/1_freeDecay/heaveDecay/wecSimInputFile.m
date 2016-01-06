@@ -21,7 +21,7 @@ waves = waveClass('noWaveCIC');
 %% Body 1: Platform
 body(1) = bodyClass('../../hydroData/Analysis.h5',1);                     
 body(1).geometryFile = '../../geometry/platform.stl';
-body(1).mass = 79.437181353569;    
+body(1).mass = 153.8;   %kg from Pedro (79.437181353569);    
 body(1).momOfInertia = [57.0431 47.211 66.2529];
 body(1).viz.color = [1 1 1];
 body(1).viz.opacity = 0.25;
@@ -30,14 +30,14 @@ body(1).viz.opacity = 0.25;
 %% Body 2: Front Flap
 body(2) = bodyClass('../../hydroData/Analysis.h5',2);                     
 body(2).geometryFile = '../../geometry/flap.stl';
-body(2).mass = 13.5204596444964;     
+body(2).mass = 23;      %kg Pedro (13.5204596444964)    
 body(2).momOfInertia = [2.3664 1.0264 1.3736];
 % body(2).initDisp.initLinDisp(3);
 
 %% Body 3: Back Flap
 body(3) = bodyClass('../../hydroData/Analysis.h5',3);                     
 body(3).geometryFile = '../../geometry/flap.stl';
-body(3).mass = 13.5204596444964;     
+body(3).mass = 23;     %kf Pedro (13.5204596444964)    
 body(3).momOfInertia = [2.3664 1.0264 1.3736];
 % body(3).initDisp.initLinDisp(3);
 
