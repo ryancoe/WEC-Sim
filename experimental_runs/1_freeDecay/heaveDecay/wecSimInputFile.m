@@ -21,7 +21,7 @@ waves = waveClass('noWaveCIC');
 %% Body 1: Platform
 body(1) = bodyClass('../../hydroData/Analysis.h5',1);                     
 body(1).geometryFile = '../../geometry/platform.stl';
-body(1).mass = 153.8;   %kg from Pedro (79.437181353569);    
+body(1).mass = 153.8;   %[kg] (from Pedro)   
 body(1).momOfInertia = [57.0431 47.211 66.2529];
 body(1).viz.color = [1 1 1];
 body(1).viz.opacity = 0.25;
@@ -30,14 +30,14 @@ body(1).viz.opacity = 0.25;
 %% Body 2: Front Flap
 body(2) = bodyClass('../../hydroData/Analysis.h5',2);                     
 body(2).geometryFile = '../../geometry/flap.stl';
-body(2).mass = 23;      %kg Pedro (13.5204596444964)    
+body(2).mass = 23.1;      %[kg] (from Pedro)   
 body(2).momOfInertia = [2.3664 1.0264 1.3736];
 % body(2).initDisp.initLinDisp(3);
 
 %% Body 3: Back Flap
 body(3) = bodyClass('../../hydroData/Analysis.h5',3);                     
 body(3).geometryFile = '../../geometry/flap.stl';
-body(3).mass = 23;     %kf Pedro (13.5204596444964)    
+body(3).mass = 23.1;     %[kg] (from Pedro) 
 body(3).momOfInertia = [2.3664 1.0264 1.3736];
 % body(3).initDisp.initLinDisp(3);
 
@@ -55,7 +55,7 @@ cylFixed.viz.color = [0 0 1];
 cylFixed.viz.opacity = 0.25;
 
 %% Cyl Heaving - attached to FOSWEC in heave
-cyl.mass = 27.348; %[kg] %%13.52;
+cyl.mass = 23.84;   %[kg] (from Pedro)
 cyl.momOfInertia = [2.19 2.15 0.28]; %[kg-m^2] %%[1 1 1];
 cyl.cg = [0 0 -1.082+0.3]; %[m] %%[0 0 -0.75];
 cyl.dispVol = 0.009782; %[m^3]
@@ -68,7 +68,7 @@ cyl.viz.color = [0 0 1];
 cyl.viz.opacity = 1;
 
 %% Squares Pitching - attached to FOSWEC in pitch
-squares.mass = 4.47;  %[kg] %%13.52;
+squares.mass = 4.47;  %[kg] 
 squares.momOfInertia = [0.29, 0.02, 0.30];  %[kg-m^2] %%[1 1 1];
 squares.cg = [0 0 -0.866+0.5]; %[m]  %%[0 0 -0.5];
 squares.dispVol = 0;
@@ -81,7 +81,7 @@ squares.viz.color = [0 1 0];
 squares.viz.opacity = 1;
 
 %% Rectangle (Frame) - attached to FOSWEC in all DOF
-rectangleFrame.mass = 23.66; %[kg] %%79.4;
+rectangleFrame.mass = 47.7; %[kg] (from Pedro)
 rectangleFrame.momOfInertia = [1.44 2.21 3.57]; %[kg-m^2] %%[1 1 1];
 rectangleFrame.cg = [0 0 -0.866+0.5]; %[m] %%[0 0 -0.5];
 rectangleFrame.dispVol = 0;
