@@ -33,7 +33,6 @@ body(2) = bodyClass('../hydroData/Analysis.h5',2);
 body(2).geometryFile = '../geometry/flap.stl';
 body(2).mass = 23.1;      %[kg] (from Pedro)    
 body(2).momOfInertia = [2.3664 1.0264 1.3736];  %UPDATE THIS
-%body(2).linearDamping(5) = 10;  
 
 %% Body 3: Back Flap
 body(3) = bodyClass('../hydroData/Analysis.h5',3);                     
@@ -90,19 +89,7 @@ rectangleFrame.geometryFile = 'empty.stl';
 rectangleFrame.viz.color = [1 0 0];
 rectangleFrame.viz.opacity = 1;
 
-%% PTO and Constraint Parameters
-%% PTO 1
-pto(1) = ptoClass('PTO_flap1');
-pto(1).k = 0;
-pto(1).c = 0;
-pto(1).loc = [-0.65 0 -0.5];
-
-%% PTO 2
-pto(2) = ptoClass('PTO_flap2');
-pto(2).k = 0;
-pto(2).c = 0;
-pto(2).loc = [0.65 0 -0.5];
-
+%% Constraint and PTO Parameters
 %% Constraint 1
 constraint(1)= constraintClass('rectangle_fixed');
 constraint(1).loc = [0 0 -0.5];
@@ -123,3 +110,15 @@ constraint(4).loc = [0 0 -0.75];
 %% Constraint 5
 constraint(5)= constraintClass('arm_floor');
 constraint(5).loc = [0 0 -1];
+
+%% PTO 1
+pto(1) = ptoClass('PTO_flap1');
+pto(1).k = 0;
+pto(1).c = 0;
+pto(1).loc = [-0.65 0 -0.5];
+
+%% PTO 2
+pto(2) = ptoClass('PTO_flap2');
+pto(2).k = 0;
+pto(2).c = 0;
+pto(2).loc = [0.65 0 -0.5];
