@@ -101,6 +101,7 @@ constraint(1).loc = [0 0 -0.5];
 %% Constraint 2
 constraint(2)= constraintClass('arm_surge');
 constraint(2).loc = [0 0 -0.5];
+% constraint(2).mooring.k(1,1) = 100;
 
 %% Constraint 3
 constraint(3)= constraintClass('arm_pitch');
@@ -114,11 +115,10 @@ constraint(4).loc = [0 0 -0.75];
 constraint(5)= constraintClass('arm_floor');
 constraint(5).loc = [0 0 -1];
 
-%% PTO 1
+%% PTO 1 - Fixed
 constraint(6)= constraintClass('PTO_flap1');
 constraint(6).loc = [-0.65 0 -0.5];
 
-%% PTO 2
+%% PTO 1 - Fixed
 constraint(7)= constraintClass('PTO_flap2');
 constraint(7).loc = [ 0.65 0 -0.5];
-
