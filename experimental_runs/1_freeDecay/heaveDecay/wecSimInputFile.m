@@ -26,6 +26,9 @@ body(1).momOfInertia = [57.0431 47.211 66.2529];  %UPDATE THIS
 body(1).viz.color = [1 1 1];
 body(1).viz.opacity = 0.25;
 % body(1).initDisp.initLinDisp(3);
+body(1).viscDrag.cd(3) = 0;
+body(1).viscDrag.characteristicArea(3) = 0;
+body(1).linearDamping(3) = 500;  
 
 %% Body 2: Front Flap
 body(2) = bodyClass('../../hydroData/Analysis.h5',2);                     

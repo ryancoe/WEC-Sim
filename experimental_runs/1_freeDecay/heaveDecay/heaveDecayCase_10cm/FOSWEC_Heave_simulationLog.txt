@@ -1,10 +1,10 @@
 wecSimMRC Case 4
 
 WEC-Sim Read Input File ...   
-Elapsed time is 9.349222 seconds.
+Elapsed time is 11.493097 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.060887 seconds.
+Elapsed time is 0.061561 seconds.
 
 WEC-Sim Simulation Settings:
 	Time Marching Solver                 = Fourth-Order Runge-Kutta Formula 
@@ -54,7 +54,8 @@ List of Constraint(s): Number of Constraints = 7
 
 
 Simulating the WEC device defined in the SimMechanics model FOSWEC_Heave.slx...   
-Elapsed time is 16.761449 seconds.
+This model was saved in a previous release. The Simulation range checking setting for Stateflow & MATLAB Function blocks is now set to 'none'. To change Simulation range checking diagnostic, set <a href="matlab: configset.highlightParameter('FOSWEC_Heave','SignalRangeChecking')">Simulation range checking</a> in the Diagnostics: Data Validity pane of the Model Configuration Parameters dialog box. For more information, see <a href="matlab: helpview([docroot '/toolbox/simulink/helptargets.map'],'Tag_ConfigSet_Debug_SignalRangeChecking')">Simulation range checking</a>
+Elapsed time is 7.963973 seconds.
 
 Post-processing and saving...   
-Elapsed time is 0.017452 seconds.
+Elapsed time is 0.025829 seconds.
