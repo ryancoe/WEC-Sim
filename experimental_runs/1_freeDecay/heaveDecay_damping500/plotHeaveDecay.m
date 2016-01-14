@@ -14,7 +14,8 @@ end
 title('Platform Heave Decay (Damping = 500)')
 xlabel('Time (s)')
 ylabel('Displacement (m)')
-xlim([0 15]);
+% xlim([0 15]);
+xlim([0 40]);
 legend('3cm','5cm','7cm','10cm','15cm')
 grid on
 
