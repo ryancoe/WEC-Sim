@@ -1,18 +1,18 @@
 wecSimMRC Case 4
 
 WEC-Sim Read Input File ...   
-Elapsed time is 10.475508 seconds.
+Elapsed time is 10.925097 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.102652 seconds.
+Elapsed time is 0.069002 seconds.
 
 WEC-Sim Simulation Settings:
 	Time Marching Solver                 = Fourth-Order Runge-Kutta Formula 
 	Start Time                     (sec) = 0
 	End Time                       (sec) = 50
-	Time Step Size                 (sec) = 0.01
+	Time Step Size                 (sec) = 0.025
 	Ramp Function Time             (sec) = 0
-	Total Number of Time Step            = 5000 
+	Total Number of Time Step            = 2000 
 
 Wave Environment: 
 	Wave Type                            = No Wave (Convolution Integral Calculation)
@@ -54,19 +54,7 @@ List of Constraint(s): Number of Constraints = 7
 
 
 Simulating the WEC device defined in the SimMechanics model FOSWEC_flapPitch.slx...   
-[Warning: For arm_wec: constraint.loc was changed from [9999 9999 9999] to [0 0 0]] 
-[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('constraintClass/checkLoc', 'C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\objects\constraintClass.m', 48)" style="font-weight:bold">constraintClass/checkLoc</a> (<a href="matlab: opentoline('C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\objects\constraintClass.m',48,0)">line 48</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wecSim', 'C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\wecSim.m', 211)" style="font-weight:bold">wecSim</a> (<a href="matlab: opentoline('C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\wecSim.m',211,0)">line 211</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wecSimMCR', 'C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\functions\wecSimMCR.m', 68)" style="font-weight:bold">wecSimMCR</a> (<a href="matlab: opentoline('C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\functions\wecSimMCR.m',68,0)">line 68</a>)] 
-[Warning: For arm_surge: constraint.loc was changed from [9999 9999 9999] to [0 0 0]] 
-[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('constraintClass/checkLoc', 'C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\objects\constraintClass.m', 48)" style="font-weight:bold">constraintClass/checkLoc</a> (<a href="matlab: opentoline('C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\objects\constraintClass.m',48,0)">line 48</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wecSim', 'C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\wecSim.m', 211)" style="font-weight:bold">wecSim</a> (<a href="matlab: opentoline('C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\wecSim.m',211,0)">line 211</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wecSimMCR', 'C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\functions\wecSimMCR.m', 68)" style="font-weight:bold">wecSimMCR</a> (<a href="matlab: opentoline('C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\functions\wecSimMCR.m',68,0)">line 68</a>)] 
-[Warning: For arm_pitch: constraint.loc was changed from [9999 9999 9999] to [0 0 0]] 
-[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('constraintClass/checkLoc', 'C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\objects\constraintClass.m', 48)" style="font-weight:bold">constraintClass/checkLoc</a> (<a href="matlab: opentoline('C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\objects\constraintClass.m',48,0)">line 48</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wecSim', 'C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\wecSim.m', 211)" style="font-weight:bold">wecSim</a> (<a href="matlab: opentoline('C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\wecSim.m',211,0)">line 211</a>)
-  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wecSimMCR', 'C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\functions\wecSimMCR.m', 68)" style="font-weight:bold">wecSimMCR</a> (<a href="matlab: opentoline('C:\Users\kmruehl\Documents\GitHub\WEC-Sim\WEC-Sim\source\functions\wecSimMCR.m',68,0)">line 68</a>)] 
-Elapsed time is 31.625238 seconds.
+Elapsed time is 22.729916 seconds.
 
 Post-processing and saving...   
-Elapsed time is 0.032675 seconds.
+Elapsed time is 0.017900 seconds.

@@ -7,12 +7,11 @@ simu=simulationClass();
 simu.simMechanicsFile = 'FOSWEC_flapPitch.slx';
 simu.rampT = 0;
 simu.endTime = 50;
-% simu.dt = 0.05;
-simu.dt = 0.01;
+simu.dt = 0.025;
 simu.mode = 'normal';
 simu.explorer = 'on';
 simu.domainSize = 2;
-simu.CITime = 10;
+simu.CITime = 50;       %this is a numerical trick, CItime shouldnt be this long, check hydroData
 simu.mcrCaseFile = 'pitchDecayCase.mat';
 
 
