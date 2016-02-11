@@ -23,11 +23,11 @@ waves = waveClass('noWaveCIC');
 ic = [0 0 -0.366]; 
 try phi = mcr.cases(imcr,1); catch phi=0; end
 
-% Body 1: WEC - Platform
-body(1) = bodyClass('../../hydroData/Analysis.h5',1);                     
-body(1).geometryFile = '../../geometry/platform.stl';
-body(1).mass = 79.437181353569;    
-body(1).momOfInertia = [57.0431 47.211 66.2529];
+%% Body 1: WEC - Platform
+body(1) = bodyClass('../../../hydroData/Analysis.h5',1);                     
+body(1).geometryFile = '../../../geometry/platform.stl';
+body(1).mass = 153.8;   %[kg] from Hindale
+body(1).momOfInertia = [37.88 29.63 66.2529];  %[kg-m^2] from Hinsdale - UPDATE Izz
 body(1).viz.color = [1 1 1];
 body(1).viz.opacity = 0.25;
 body(1).setInitDisp(ic, [0 1 0], phi*pi/180, [0 0 0]);
@@ -35,21 +35,20 @@ body(1).viscDrag.cd(5) = 0;
 body(1).viscDrag.characteristicArea(5) = 0;
 body(1).linearDamping(5) = 150;  
 
-% Body 2: WEC - Front Flap
-body(2) = bodyClass('../../hydroData/Analysis.h5',2);                     
-body(2).geometryFile = '../../geometry/flap.stl';
-body(2).mass = 13.5204596444964;     
-body(2).momOfInertia = [2.3664 1.0264 1.3736];
+%% Body 2: Front Flap
+body(2) = bodyClass('../../../hydroData/Analysis.h5',2);                     
+body(2).geometryFile = '../../../geometry/flap.stl';
+body(2).mass = 23.1;      %[kg] from Hinsdale
+body(2).momOfInertia = [1.42 1.19 1.99];  %[kg-m^2] from Hinsdale
 body(2).setInitDisp(ic, [0 1 0], phi*pi/180, [0 0 0]);
 
-% Body 3: WEC - Back Flap
-body(3) = bodyClass('../../hydroData/Analysis.h5',3);                     
-body(3).geometryFile = '../../geometry/flap.stl';
-body(3).mass = 13.5204596444964;     
-body(3).momOfInertia = [2.3664 1.0264 1.3736];
-body(3).setInitDisp(ic, [0 1 0], phi*pi/180, [0 0 0]);
+%% Body 3: Back Flap
+body(3) = bodyClass('../../../hydroData/Analysis.h5',3);                     
+body(3).geometryFile = '../../../geometry/flap.stl';
+body(3).mass = 23.1;      %[kg] from Hinsdale
+body(3).momOfInertia = [1.58 1.62 1.25];  %[kg-m^2] from Hinsdale
 
-% Body 4: Arm - Rectangle Frame (attached to FOSWEC)
+%% Body 4: Arm - Rectangle Frame (attached to FOSWEC)
 body(4) = bodyClass('',[]);
 body(4).nhBody = 1;
 body(4).name = 'arm_rectangle';
