@@ -50,7 +50,7 @@ body(3).mass = 23.1;      %[kg] from Hinsdale
 body(3).momOfInertia = [1.58 1.62 1.25];  %[kg-m^2] from Hinsdale
 
 %% Arm Mass Properties 
-% Body 4: Arm - Rectangle Frame (attached to FOSWEC)
+%% Body 4: Arm - Rectangle Frame (attached to FOSWEC)
 body(4) = bodyClass('',[]);
 body(4).nhBody = 1;
 body(4).name = 'arm_rectangle';
@@ -62,7 +62,7 @@ body(4).geometryFile = '../../../geometry/rectangle.stl';
 body(4).viz.color = [1 0 0];
 body(4).viz.opacity = 1;
 
-% Body 5: Arm - Pitching Squares
+%% Body 5: Arm - Pitching Squares
 body(5) = bodyClass('',[]);
 body(5).nhBody = 1;
 body(5).name = 'arm_squares';
@@ -74,7 +74,7 @@ body(5).geometryFile = '../../../geometry/squares.stl';
 body(5).viz.color = [0 1 0];
 body(5).viz.opacity = 1;
 
-% Body 6: Arm - Heaving Cylinder
+%% Body 6: Arm - Heaving Cylinder
 body(6) = bodyClass('',[]);
 body(6).nhBody = 1;
 body(6).name = 'arm_cylinder';
@@ -86,7 +86,7 @@ body(6).geometryFile = '../../../geometry/cylinder.stl';
 body(6).viz.color = [0 0 1];
 body(6).viz.opacity = 1;
 
-% Body 7: Arm - Fixed Cylinder (attached to seafloor)
+%% Body 7: Arm - Fixed Cylinder (attached to seafloor)
 body(7) = bodyClass('',[]);
 body(7).nhBody = 1;
 body(7).name = 'arm_cylinderFixed';

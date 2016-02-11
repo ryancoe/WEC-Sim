@@ -44,7 +44,8 @@ body(3).mass = 23.1;      %[kg] from Hinsdale
 body(3).momOfInertia = [1.58 1.62 1.25];  %[kg-m^2] from Hinsdale
 % body(3).initDisp.initLinDisp(3);
 
-%% Arm Mass Properties (UPDATED)
+%% Arm Mass Properties 
+% UPDATE THIS WITH NONHYDRO BODIES - SLX FILE NEEDS REVISION TOO
 %% Cyl Fixed - mounted to seafloor
 cylFixed.mass = 1;
 cylFixed.momOfInertia = [1 1 1];

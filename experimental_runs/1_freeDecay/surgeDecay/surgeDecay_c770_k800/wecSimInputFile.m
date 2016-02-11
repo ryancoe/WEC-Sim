@@ -45,10 +45,10 @@ body(3).momOfInertia = [1.58 1.62 1.25];  %[kg-m^2] from Hinsdale
 % body(3).initDisp.initLinDisp(1);
 body(3).viscDrag.cd(1) = 1.28;  %Of a flat plat https://www.grc.nasa.gov/www/k-12/airplane/shaped.html
 body(3).viscDrag.characteristicArea(1) = 0.5; %0.402424;  %[m^2] h=0.5m w=0.7m 
-body(3).linearDamping(1) = 0;  
+body(3).linearDamping(1) = 0;  s
 
 %% Arm Mass Properties 
-% % (This needs to be updated with non-hydro bodies)
+% UPDATE THIS WITH NONHYDRO BODIES - SLX FILE NEEDS REVISION TOO
 %% Cyl Fixed - mounted to seafloor
 cylFixed.mass = 1;
 cylFixed.momOfInertia = [1 1 1];

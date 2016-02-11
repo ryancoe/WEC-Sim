@@ -11,7 +11,7 @@ for i = 1:length(mcr.cases)
     hold on
 end
 
-title(['Platform Surge Decay (cd ',num2str(body(2).viscDrag.cd(5),'%2g'),', c ',num2str(body(2).linearDamping(5),'%2g'),')'])
+title(['Flap Decay (cd ',num2str(body(2).viscDrag.cd(5),'%2g'),', c ',num2str(body(2).linearDamping(5),'%2g'),')'])
 xlabel('Time (s)')
 ylabel('Displacement (deg)')
 xlim([0 10]);
