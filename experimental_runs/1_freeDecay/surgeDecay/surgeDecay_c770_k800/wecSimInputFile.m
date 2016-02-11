@@ -47,7 +47,8 @@ body(3).viscDrag.cd(1) = 1.28;  %Of a flat plat https://www.grc.nasa.gov/www/k-1
 body(3).viscDrag.characteristicArea(1) = 0.5; %0.402424;  %[m^2] h=0.5m w=0.7m 
 body(3).linearDamping(1) = 0;  
 
-%% Arm Mass Properties (UPDATED)
+%% Arm Mass Properties 
+% % (This needs to be updated with non-hydro bodies)
 %% Cyl Fixed - mounted to seafloor
 cylFixed.mass = 1;
 cylFixed.momOfInertia = [1 1 1];
