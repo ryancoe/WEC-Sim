@@ -1,9 +1,9 @@
 
 WEC-Sim Read Input File ...   
-Elapsed time is 12.400843 seconds.
+Elapsed time is 13.214559 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.200415 seconds.
+Elapsed time is 0.219918 seconds.
 
 WEC-Sim Simulation Settings:
 	Time Marching Solver                 = Fourth-Order Runge-Kutta Formula 
@@ -57,8 +57,15 @@ List of Constraint(s): Number of Constraints = 5
 
 
 Simulating the WEC device defined in the SimMechanics model FOSWEC.slx...   
-This model was saved in a previous release. The Simulation range checking setting for Stateflow & MATLAB Function blocks is now set to 'none'. To change Simulation range checking diagnostic, set <a href="matlab: configset.highlightParameter('FOSWEC','SignalRangeChecking')">Simulation range checking</a> in the Diagnostics: Data Validity pane of the Model Configuration Parameters dialog box. For more information, see <a href="matlab: helpview([docroot '/toolbox/simulink/helptargets.map'],'Tag_ConfigSet_Debug_SignalRangeChecking')">Simulation range checking</a>
-Elapsed time is 35.831092 seconds.
+[Warning: FOSWEC/Fixed Cylinder/Non-Hydro Body/Structure/Body Properties:The parameter Geometry/File Name is a file that does not
+exist. Resolve this issue in order to remove the warning.] 
+[Warning: FOSWEC/Heaving Cylinder/Non-Hydro Body/Structure/Body Properties:The parameter Geometry/File Name is a file that does not
+exist. Resolve this issue in order to remove the warning.] 
+[Warning: FOSWEC/Rectangle Frame/Non-Hydro Body/Structure/Body Properties:The parameter Geometry/File Name is a file that does not
+exist. Resolve this issue in order to remove the warning.] 
+[Warning: FOSWEC/Squares/Non-Hydro Body/Structure/Body Properties:The parameter Geometry/File Name is a file that does not exist.
+Resolve this issue in order to remove the warning.] 
+Elapsed time is 23.770002 seconds.
 
 Post-processing and saving...   
-Elapsed time is 0.637362 seconds.
+Elapsed time is 1.346493 seconds.

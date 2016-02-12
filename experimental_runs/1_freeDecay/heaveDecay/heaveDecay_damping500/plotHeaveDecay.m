@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%                        Plot WEC-Sim Decay
+%%%%                        Heave Decay                               %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear all; close all; clc;
 
@@ -11,7 +11,8 @@ for i = 1:length(mcr.cases)
     hold on
 end
 
-title('Platform Heave Decay (Damping = 500)')
+% title('Platform Heave Decay (Damping = 500)')
+title(['Platform Heave Decay (cd ',num2str(body(1).viscDrag.cd(3),'%2g'),', c ',num2str(body(1).linearDamping(3),'%2g'),')'])
 xlabel('Time (s)')
 ylabel('Displacement (m)')
 % xlim([0 15]);

@@ -1,10 +1,10 @@
 wecSimMRC Case 3
 
 WEC-Sim Read Input File ...   
-Elapsed time is 11.882968 seconds.
+Elapsed time is 12.451765 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.068808 seconds.
+Elapsed time is 0.072570 seconds.
 
 WEC-Sim Simulation Settings:
 	Time Marching Solver                 = Fourth-Order Runge-Kutta Formula 
@@ -22,17 +22,17 @@ List of Body: Number of Bodies = 3
 	***** Body Number 0, Name: body1 *****
 	Body CG                          (m) = [-0,0.537,-0.156]
 	Body Mass                       (kg) = 153.8 
-	Body Diagonal MOI              (kgm2)= [57.0431,47.211,66.2529]
+	Body Diagonal MOI              (kgm2)= [37.88,29.63,66.2529]
 
 	***** Body Number 1, Name: body2 *****
 	Body CG                          (m) = [-0.65,0.19,-0.338]
 	Body Mass                       (kg) = 23.1 
-	Body Diagonal MOI              (kgm2)= [2.3664,1.0264,1.3736]
+	Body Diagonal MOI              (kgm2)= [1.42,1.19,1.99]
 
 	***** Body Number 2, Name: body3 *****
 	Body CG                          (m) = [0.65,0.19,-0.338]
 	Body Mass                       (kg) = 23.1 
-	Body Diagonal MOI              (kgm2)= [2.3664,1.0264,1.3736]
+	Body Diagonal MOI              (kgm2)= [1.58,1.62,1.25]
 
 List of PTO(s): No PTO in the system
 
@@ -54,8 +54,7 @@ List of Constraint(s): Number of Constraints = 7
 
 
 Simulating the WEC device defined in the SimMechanics model FOSWEC_Heave.slx...   
-This model was saved in a previous release. The Simulation range checking setting for Stateflow & MATLAB Function blocks is now set to 'none'. To change Simulation range checking diagnostic, set <a href="matlab: configset.highlightParameter('FOSWEC_Heave','SignalRangeChecking')">Simulation range checking</a> in the Diagnostics: Data Validity pane of the Model Configuration Parameters dialog box. For more information, see <a href="matlab: helpview([docroot '/toolbox/simulink/helptargets.map'],'Tag_ConfigSet_Debug_SignalRangeChecking')">Simulation range checking</a>
-Elapsed time is 7.034656 seconds.
+Elapsed time is 10.700762 seconds.
 
 Post-processing and saving...   
-Elapsed time is 0.018110 seconds.
+Elapsed time is 0.024238 seconds.
