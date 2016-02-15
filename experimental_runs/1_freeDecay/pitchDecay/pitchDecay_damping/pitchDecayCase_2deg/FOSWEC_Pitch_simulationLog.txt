@@ -1,10 +1,10 @@
 wecSimMRC Case 1
 
 WEC-Sim Read Input File ...   
-Elapsed time is 10.462519 seconds.
+Elapsed time is 10.488978 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.170752 seconds.
+Elapsed time is 0.174211 seconds.
 
 WEC-Sim Simulation Settings:
 	Time Marching Solver                 = Fourth-Order Runge-Kutta Formula 
@@ -54,7 +54,7 @@ List of Constraint(s): Number of Constraints = 7
 
 
 Simulating the WEC device defined in the SimMechanics model FOSWEC_Pitch.slx...   
-Elapsed time is 10.101635 seconds.
+Elapsed time is 9.857202 seconds.
 
 Post-processing and saving...   
-Elapsed time is 0.124962 seconds.
+Elapsed time is 0.117969 seconds.
