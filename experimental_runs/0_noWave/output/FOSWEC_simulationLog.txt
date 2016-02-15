@@ -1,9 +1,9 @@
 
 WEC-Sim Read Input File ...   
-Elapsed time is 11.395083 seconds.
+Elapsed time is 10.781073 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.179822 seconds.
+Elapsed time is 0.158341 seconds.
 
 WEC-Sim Simulation Settings:
 	Time Marching Solver                 = Fourth-Order Runge-Kutta Formula 
@@ -18,11 +18,6 @@ Wave Environment:
 
 List of Body: Number of Bodies = 3 
 
-	***** Body Number 2, Name: platform *****
-	Body CG                          (m) = [0,0,-0.156]
-	Body Mass                       (kg) = 153.8 
-	Body Diagonal MOI              (kgm2)= [37.88,29.63,66.2529]
-
 	***** Body Number 0, Name: flap1 *****
 	Body CG                          (m) = [-0.65,0,-0.338]
 	Body Mass                       (kg) = 23.1 
@@ -32,6 +27,11 @@ List of Body: Number of Bodies = 3
 	Body CG                          (m) = [0.65,0,-0.338]
 	Body Mass                       (kg) = 23.1 
 	Body Diagonal MOI              (kgm2)= [1.58,1.62,1.25]
+
+	***** Body Number 2, Name: platform *****
+	Body CG                          (m) = [0,0,-0.156]
+	Body Mass                       (kg) = 153.8 
+	Body Diagonal MOI              (kgm2)= [37.88,29.63,66.2529]
 
 List of PTO(s): Number of PTOs = 2 
 
@@ -65,7 +65,7 @@ Resolve this issue in order to remove the warning.]
 Resolve this issue in order to remove the warning.] 
 [Warning: FOSWEC/Squares/Non-Hydro Body/Structure/Body Properties:The parameter Geometry/File Name is a file that does not exist. Resolve this
 issue in order to remove the warning.] 
-Elapsed time is 20.822748 seconds.
+Elapsed time is 20.995484 seconds.
 
 Post-processing and saving...   
-Elapsed time is 1.205868 seconds.
+Elapsed time is 1.688358 seconds.

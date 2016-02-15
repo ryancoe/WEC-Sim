@@ -1,10 +1,10 @@
 wecSimMRC Case 5
 
 WEC-Sim Read Input File ...   
-Elapsed time is 11.493841 seconds.
+Elapsed time is 11.158400 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.075924 seconds.
+Elapsed time is 0.065148 seconds.
 
 WEC-Sim Simulation Settings:
 	Time Marching Solver                 = Fourth-Order Runge-Kutta Formula 
@@ -19,11 +19,6 @@ Wave Environment:
 
 List of Body: Number of Bodies = 3 
 
-	***** Body Number 2, Name: platform *****
-	Body CG                          (m) = [0,0,-0.156]
-	Body Mass                       (kg) = 153.8 
-	Body Diagonal MOI              (kgm2)= [37.88,29.63,66.2529]
-
 	***** Body Number 0, Name: flap1 *****
 	Body CG                          (m) = [-0.65,0,-0.338]
 	Body Mass                       (kg) = 23.1 
@@ -33,6 +28,11 @@ List of Body: Number of Bodies = 3
 	Body CG                          (m) = [0.65,0,-0.338]
 	Body Mass                       (kg) = 23.1 
 	Body Diagonal MOI              (kgm2)= [1.58,1.62,1.25]
+
+	***** Body Number 2, Name: platform *****
+	Body CG                          (m) = [0,0,-0.156]
+	Body Mass                       (kg) = 153.8 
+	Body Diagonal MOI              (kgm2)= [37.88,29.63,66.2529]
 
 List of PTO(s): No PTO in the system
 
@@ -54,7 +54,7 @@ List of Constraint(s): Number of Constraints = 7
 
 
 Simulating the WEC device defined in the SimMechanics model FOSWEC_Heave.slx...   
-Elapsed time is 7.418203 seconds.
+Elapsed time is 6.894863 seconds.
 
 Post-processing and saving...   
-Elapsed time is 0.015754 seconds.
+Elapsed time is 0.014974 seconds.

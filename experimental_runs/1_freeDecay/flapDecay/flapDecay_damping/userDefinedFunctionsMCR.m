@@ -6,7 +6,7 @@
 movefile('output',['flapDecayCase_',num2str(mcr.cases(imcr,1),'%2g'),'deg'])
 
 figure
-plot(output.bodies(2).time,output.bodies(2).position(:,5)*180/pi);
+plot(output.bodies(1).time,output.bodies(1).position(:,5)*180/pi);
 title('Flap1 Pitch')
 xlabel('time (s)')
 ylabel('displacement (deg)')

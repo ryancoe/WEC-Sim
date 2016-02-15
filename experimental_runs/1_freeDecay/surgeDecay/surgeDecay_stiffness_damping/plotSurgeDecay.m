@@ -7,7 +7,7 @@ load('surgeDecayCase.mat')
 figure(); 
 for i = 1:length(mcr.cases)
     load(['./surgeDecayCase_',num2str(mcr.cases(i)*100,'%2g'),'cm/FOSWEC_Surge_matlabWorkspace.mat']) 
-    plot(output.bodies(1).time,output.bodies(1).position(:,1)-body(1).hydroData.properties.cg(1));   
+    plot(output.bodies(3).time,output.bodies(3).position(:,1)-body(3).hydroData.properties.cg(1));   
     hold on
 end
 

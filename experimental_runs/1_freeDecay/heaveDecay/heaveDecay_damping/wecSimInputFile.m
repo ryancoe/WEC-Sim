@@ -18,29 +18,31 @@ simu.mcrCaseFile = 'heaveDecayCase.mat';
 waves = waveClass('noWaveCIC');
 
 %% Body Data
-%% Body 1: Platform
+%% Body 1: Front Flap
 body(1) = bodyClass('../../../hydroData/Analysis.h5',1);                     
-body(1).geometryFile = '../../../geometry/platform.stl';
-body(1).mass = 153.8;   %[kg] from Hinsdale
-body(1).momOfInertia = [37.88 29.63 66.2529];  %[kg-m^2] from Hinsdale - UPDATE Izz
-body(1).viz.color = [1 1 1];
-body(1).viz.opacity = 0.25;
+body(1).geometryFile = '../../../geometry/flap.stl';
+body(1).mass = 23.1;      %[kg] from Hinsdale
+body(1).momOfInertia = [1.42 1.19 1.99];  %[kg-m^2] from Hinsdale
 
-body(1).viscDrag.cd(3) = 1.28;                  %flat plate
-body(1).viscDrag.characteristicArea(3) = 0.5; %[m^2] 1.3*.89-1.2*076 = 0.245
-body(1).linearDamping(3) = 800;  
-
-%% Body 2: Front Flap
+%% Body 2: Back Flap
 body(2) = bodyClass('../../../hydroData/Analysis.h5',2);                     
 body(2).geometryFile = '../../../geometry/flap.stl';
 body(2).mass = 23.1;      %[kg] from Hinsdale
-body(2).momOfInertia = [1.42 1.19 1.99];  %[kg-m^2] from Hinsdale
+body(2).momOfInertia = [1.58 1.62 1.25];  %[kg-m^2] from Hinsdale
 
-%% Body 3: Back Flap
+%% Body 3: Platform
 body(3) = bodyClass('../../../hydroData/Analysis.h5',3);                     
-body(3).geometryFile = '../../../geometry/flap.stl';
-body(3).mass = 23.1;      %[kg] from Hinsdale
-body(3).momOfInertia = [1.58 1.62 1.25];  %[kg-m^2] from Hinsdale
+body(3).geometryFile = '../../../geometry/platform.stl';
+body(3).mass = 153.8;   %[kg] from Hinsdale
+body(3).momOfInertia = [37.88 29.63 66.2529];  %[kg-m^2] from Hinsdale - UPDATE Izz
+body(3).viz.color = [1 1 1];
+body(3).viz.opacity = 0.25;
+
+body(3).viscDrag.cd(3) = 1.28;                  %flat plate
+body(3).viscDrag.characteristicArea(3) = 0.5; %[m^2] 1.3*.89-1.2*076 = 0.245
+body(3).linearDamping(3) = 800;  
+
+
 
 %% Arm Mass Properties 
 %% Body 4: Arm - Rectangle Frame (attached to FOSWEC)
