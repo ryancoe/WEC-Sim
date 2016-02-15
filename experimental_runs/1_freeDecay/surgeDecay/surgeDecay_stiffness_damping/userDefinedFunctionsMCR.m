@@ -6,7 +6,7 @@
 movefile('output',['surgeDecayCase_',num2str(mcr.cases(imcr)*100,'%2g'),'cm'])
 
 figure
-plot(output.bodies(1).time,output.bodies(1).position(:,1)-body(1).hydroData.properties.cg(1));
+plot(output.bodies(3).time,output.bodies(3).position(:,1)-body(3).hydroData.properties.cg(1));
 title('platform surge')
 xlabel('time (s)')
 ylabel('displacement (m)')
