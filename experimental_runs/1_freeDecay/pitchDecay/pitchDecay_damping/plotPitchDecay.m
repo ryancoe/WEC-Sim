@@ -11,11 +11,10 @@ for i = 1:length(mcr.cases)
     hold on
 end
 
-% title('Platform Pitch Decay (Damping = 150)')
 title(['Platform Pitch Decay (cd ',num2str(body(1).viscDrag.cd(5),'%2g'),', c ',num2str(body(1).linearDamping(5),'%2g'),')'])
 xlabel('Time (s)')
 ylabel('Displacement (deg)')
-xlim([0 15]);
+xlim([0 10]);
 legend('2deg','3deg','5deg','7deg','8p4deg')
 grid on
 

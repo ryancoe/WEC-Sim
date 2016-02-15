@@ -34,7 +34,7 @@ body(1).viz.opacity = 0.25;
 body(1).setInitDisp(ic, [0 1 0], phi*pi/180, [0 0 0]);
 body(1).viscDrag.cd(5) = 0;
 body(1).viscDrag.characteristicArea(5) = 0;
-body(1).linearDamping(5) = 150;  
+body(1).linearDamping(5) = 50;  
 
 %% Body 2: Front Flap
 body(2) = bodyClass('../../../hydroData/Analysis.h5',2);                     

@@ -6,12 +6,12 @@
 simu=simulationClass();
 simu.simMechanicsFile = 'FOSWEC_flapPitch.slx';
 simu.rampT = 0;
-simu.endTime = 25;
+simu.endTime = 15;
 simu.dt = 0.025;
 simu.mode = 'normal';
 simu.explorer = 'on';
 simu.domainSize = 2;
-simu.CITime = 50;       %this is a numerical trick, CItime shouldnt be this long, check hydroData
+simu.CITime = 15; %50;       %this is a numerical trick, CItime shouldnt be this long, check hydroData
 simu.mcrCaseFile = 'flapDecayCase.mat';
 
 
@@ -31,7 +31,7 @@ body(1).momOfInertia = [37.88 29.63 66.2529];  %[kg-m^2] from Hinsdale - UPDATE 
 body(1).viz.color = [1 1 1];
 body(1).viz.opacity = 0.25;
 
-%% Body 2: Front Flap
+% Body 2: Front Flap
 body(2) = bodyClass('../../../hydroData/Analysis.h5',2);                     
 body(2).geometryFile = '../../../geometry/flap.stl';
 body(2).mass = 23.1;      %[kg] from Hinsdale

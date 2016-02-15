@@ -108,7 +108,7 @@ constraint(2).loc = [0 0 -0.5];
 
 constraint(2).mooring.initLinDispAngle(1) = 0.1;
 constraint(2).mooring.k(1,1) = 925; %[N/m]   %based on static offset test 904-962 N/m
-constraint(2).mooring.c(1,1) = 770;
+constraint(2).mooring.c(1,1) = 750; %[N/m/s]
 
 %% Constraint 3
 constraint(3)= constraintClass('arm_pitch');
