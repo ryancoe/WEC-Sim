@@ -34,7 +34,7 @@ body(2).momOfInertia = [1.58 1.62 1.25];  %[kg-m^2] from Hinsdale
 %% Body 3: Platform
 body(3) = bodyClass('../hydroData/Analysis.h5',3);                     
 body(3).geometryFile = '../geometry/platform.stl';
-body(3).mass = 153.8;   %[kg] from Hindale
+body(3).mass = 153.8;   %[kg] from Hinsdale
 body(3).momOfInertia = [37.88 29.63 66.2529];  %[kg-m^2] from Hinsdale - UPDATE Izz
 body(3).viz.color = [1 1 1];
 body(3).viz.opacity = 0.25;
