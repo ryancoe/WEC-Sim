@@ -11,7 +11,7 @@ simu.dt = 0.025;
 simu.mode = 'normal';
 simu.explorer = 'on';
 simu.domainSize = 2;
-simu.CITime = 49.5; %50;       %this is a numerical trick, CItime shouldnt be this long, check hydroData
+simu.CITime = 50;       %this is a numerical trick, CItime shouldnt be this long, check hydroData
 simu.mcrCaseFile = 'flapDecayCase.mat';
 
 
@@ -22,24 +22,24 @@ waves = waveClass('noWaveCIC');
 ic = [-0.65 0 -0.5]; %ic of pitch rotation
 try phi = mcr.cases(imcr,1); catch phi=0; end
 
-%% Body 1: Front Flap
+%% Body 1: Back Flap
 body(1) = bodyClass('../../../hydroData/Analysis.h5',1);                     
 body(1).geometryFile = '../../../geometry/flap.stl';
 body(1).mass = 23.1;      %[kg] from Hinsdale
 body(1).momOfInertia = [1.42 1.19 1.99];  %[kg-m^2] from Hinsdale
 
-body(1).setInitDisp(ic, [0 1 0], phi*pi/180, [0 0 0]);
-body(1).linearDamping(5) = 10;  
-body(1).viscDrag.cd(5) = 8;  % see Babarit ref
-body(1).viscDrag.characteristicArea(5) = 0.01429167;  %[m^2] h=0.5m w=0.7m 
-% second momoent area - https://en.wikipedia.org/wiki/List_of_area_moments_of_inertia
-% Iy = 1/12*w^3*h = -0.98571
-
-%% Body 2: Back Flap
+%% Body 2: Front Flap
 body(2) = bodyClass('../../../hydroData/Analysis.h5',2);                     
 body(2).geometryFile = '../../../geometry/flap.stl';
 body(2).mass = 23.1;      %[kg] from Hinsdale
 body(2).momOfInertia = [1.58 1.62 1.25];  %[kg-m^2] from Hinsdale
+
+body(2).setInitDisp(ic, [0 1 0], phi*pi/180, [0 0 0]);
+body(2).linearDamping(5) = 10;  
+body(2).viscDrag.cd(5) = 8;  % see Babarit ref
+body(2).viscDrag.characteristicArea(5) = 0.01429167;  %[m^2] h=0.5m w=0.7m 
+% second momoent area - https://en.wikipedia.org/wiki/List_of_area_moments_of_inertia
+% Iy = 1/12*w^3*h = -0.98571
 
 %% Body 3: Platform
 body(3) = bodyClass('../../../hydroData/Analysis.h5',3);                     
@@ -123,11 +123,11 @@ constraint(4).loc = [0 0 -1.36];
 constraint(5)= constraintClass('arm_floor');
 constraint(5).loc = [0 0 -1.36];
 
-%% PTO 1 - Pitch
+%% Constraint 6 - Pitch
 constraint(6)= constraintClass('PTO_flap1');
 constraint(6).loc = [-0.65 0 -0.5];
 
-%% PTO 2 - Fixed
+%% Constraint 7 - Fixed
 constraint(7)= constraintClass('PTO_flap2');
 constraint(7).loc = [0.65 0 -0.5];
 

@@ -19,17 +19,17 @@ waves = waveClass('noWaveCIC');
 % waves.noWaveHydrodynamicCoeffT=2*pi/0.7222053;
 
 %% Body Data
-%% Body 1: Front Flap
+%% Body 1: Back Flap
 body(1) = bodyClass('../hydroData/Analysis.h5',1);                     
 body(1).geometryFile = '../geometry/flap.stl';
 body(1).mass = 23.1;      %[kg] from Hinsdale
-body(1).momOfInertia = [1.42 1.19 1.99];  %[kg-m^2] from Hinsdale
+body(1).momOfInertia = [1.58 1.62 1.25];  %[kg-m^2] from Hinsdale
 
-%% Body 2: Back Flap
+%% Body 2: Front Flap
 body(2) = bodyClass('../hydroData/Analysis.h5',2);                     
 body(2).geometryFile = '../geometry/flap.stl';
 body(2).mass = 23.1;      %[kg] from Hinsdale
-body(2).momOfInertia = [1.58 1.62 1.25];  %[kg-m^2] from Hinsdale
+body(2).momOfInertia = [1.42 1.19 1.99];  %[kg-m^2] from Hinsdale
 
 %% Body 3: Platform
 body(3) = bodyClass('../hydroData/Analysis.h5',3);                     
@@ -49,7 +49,7 @@ body(4).mass = 47.7; %[kg] (from Pedro)
 body(4).momOfInertia = [1.44 2.21 3.57]; %[kg-m^2]      %UPDATE THIS
 body(4).cg = [0 0 -0.366]; %[m]                         %UPDATE THIS
 body(4).dispVol = 0;
-body(4).geometryFile = '../../geometry/rectangle.stl';
+body(4).geometryFile = '../geometry/rectangle.stl';
 body(4).viz.color = [1 0 0];
 body(4).viz.opacity = 1;
 
@@ -61,7 +61,7 @@ body(5).mass = 4.47;  %[kg]                             %UPDATE THIS
 body(5).momOfInertia = [0.29, 0.02, 0.30]; %[kg-m^2]    %UPDATE THIS
 body(5).cg = [0 0 -0.366]; %[m]                         %UPDATE THIS
 body(5).dispVol = 0;
-body(5).geometryFile = '../../geometry/squares.stl';
+body(5).geometryFile = '../geometry/squares.stl';
 body(5).viz.color = [0 1 0];
 body(5).viz.opacity = 1;
 
@@ -73,7 +73,7 @@ body(6).mass = 23.84;   %[kg] (from Pedro)
 body(6).momOfInertia = [2.19 2.15 0.28]; %[kg-m^2]      %UPDATE THIS
 body(6).cg = [0 0 -0.782]; %[m]                         %UPDATE THIS
 body(6).dispVol = 0.009782;
-body(6).geometryFile = '../../geometry/cylinder.stl';
+body(6).geometryFile = '../geometry/cylinder.stl';
 body(6).viz.color = [0 0 1];
 body(6).viz.opacity = 1;
 
@@ -88,7 +88,7 @@ body(7).dispVol = 1/1000;
 body(7).initDisp.initLinDisp = [0 0 0];
 body(7).initDisp.initAngularDispAxis = [0 1 0];
 body(7).initDisp.initAngularDispAngle = 0;
-body(7).geometryFile = '../../geometry/cylinder_fixed.stl';
+body(7).geometryFile = '../geometry/cylinder_fixed.stl';
 body(7).viz.color = [0 0 1];
 body(7).viz.opacity = 0.25;
 
@@ -115,14 +115,11 @@ constraint(4).loc = [0 0 -0.75];
 constraint(5)= constraintClass('arm_floor');
 constraint(5).loc = [0 0 -1];
 
-%% PTO 1 - Fixed
-pto(1) = ptoClass('PTO_flap1');
-pto(1).k = 0;
-pto(1).c = 0;
-pto(1).loc = [-0.65 0 -0.5];
+%% Constraint 6 - Pitch
+constraint(6)= constraintClass('PTO_flap1');
+constraint(6).loc = [-0.65 0 -0.5];
 
-%% PTO 2 - Pitch
-pto(2) = ptoClass('PTO_flap2');
-pto(2).k = 0;
-pto(2).c = 0;
-pto(2).loc = [0.65 0 -0.5];
+%% Constraint 7 - Pitch
+constraint(7)= constraintClass('PTO_flap2');
+constraint(7).loc = [0.65 0 -0.5];
+

@@ -1,9 +1,9 @@
 
 WEC-Sim Read Input File ...   
-Elapsed time is 10.781073 seconds.
+Elapsed time is 12.513163 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.158341 seconds.
+Elapsed time is 0.183754 seconds.
 
 WEC-Sim Simulation Settings:
 	Time Marching Solver                 = Fourth-Order Runge-Kutta Formula 
@@ -18,32 +18,24 @@ Wave Environment:
 
 List of Body: Number of Bodies = 3 
 
-	***** Body Number 0, Name: flap1 *****
-	Body CG                          (m) = [-0.65,0,-0.338]
-	Body Mass                       (kg) = 23.1 
-	Body Diagonal MOI              (kgm2)= [1.42,1.19,1.99]
-
-	***** Body Number 1, Name: flap2 *****
-	Body CG                          (m) = [0.65,0,-0.338]
+	***** Body Number 0, Name: flap2 *****
+	Body CG                          (m) = [0.65,0,-0.29]
 	Body Mass                       (kg) = 23.1 
 	Body Diagonal MOI              (kgm2)= [1.58,1.62,1.25]
 
+	***** Body Number 1, Name: flap1 *****
+	Body CG                          (m) = [-0.65,0,-0.29]
+	Body Mass                       (kg) = 23.1 
+	Body Diagonal MOI              (kgm2)= [1.42,1.19,1.99]
+
 	***** Body Number 2, Name: platform *****
-	Body CG                          (m) = [0,0,-0.156]
+	Body CG                          (m) = [0,0,-0.063]
 	Body Mass                       (kg) = 153.8 
 	Body Diagonal MOI              (kgm2)= [37.88,29.63,66.2529]
 
-List of PTO(s): Number of PTOs = 2 
+List of PTO(s): No PTO in the system
 
-	***** PTO Name: PTO_flap1 *****
-	PTO Stiffness           (N/m;Nm/rad) = 0
-	PTO Damping           (Ns/m;Nsm/rad) = 0
-
-	***** PTO Name: PTO_flap2 *****
-	PTO Stiffness           (N/m;Nm/rad) = 0
-	PTO Damping           (Ns/m;Nsm/rad) = 0
-
-List of Constraint(s): Number of Constraints = 5 
+List of Constraint(s): Number of Constraints = 7 
 
 	***** Constraint Name: rectangle_fixed *****
 
@@ -55,17 +47,13 @@ List of Constraint(s): Number of Constraints = 5
 
 	***** Constraint Name: arm_floor *****
 
+	***** Constraint Name: PTO_flap1 *****
+
+	***** Constraint Name: PTO_flap2 *****
+
 
 Simulating the WEC device defined in the SimMechanics model FOSWEC.slx...   
-[Warning: FOSWEC/Fixed Cylinder/Non-Hydro Body/Structure/Body Properties:The parameter Geometry/File Name is a file that does not exist. Resolve
-this issue in order to remove the warning.] 
-[Warning: FOSWEC/Heaving Cylinder/Non-Hydro Body/Structure/Body Properties:The parameter Geometry/File Name is a file that does not exist.
-Resolve this issue in order to remove the warning.] 
-[Warning: FOSWEC/Rectangle Frame/Non-Hydro Body/Structure/Body Properties:The parameter Geometry/File Name is a file that does not exist.
-Resolve this issue in order to remove the warning.] 
-[Warning: FOSWEC/Squares/Non-Hydro Body/Structure/Body Properties:The parameter Geometry/File Name is a file that does not exist. Resolve this
-issue in order to remove the warning.] 
-Elapsed time is 20.995484 seconds.
+Elapsed time is 23.910377 seconds.
 
 Post-processing and saving...   
-Elapsed time is 1.688358 seconds.
+Elapsed time is 0.848604 seconds.
