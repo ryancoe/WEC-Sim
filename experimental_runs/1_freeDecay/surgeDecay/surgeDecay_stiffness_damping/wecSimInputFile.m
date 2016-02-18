@@ -19,7 +19,7 @@ waves = waveClass('noWaveCIC');
 
 %% Body Data
 %% Body 1: Back Flap
-body(1) = bodyClass('../../../hydroData/Analysis.h5',1);                     
+body(1) = bodyClass('../../../hydroData/Analysis.h5');                     
 body(1).geometryFile = '../../../geometry/flap.stl';
 body(1).mass = 23.1;      %[kg] from Hinsdale
 body(1).momOfInertia = [1.58 1.62 1.25];  %[kg-m^2] from Hinsdale
@@ -28,7 +28,7 @@ body(1).viscDrag.characteristicArea(1) = 0.5; %0.402424;  %[m^2] h=0.5m w=0.7m
 body(1).linearDamping(1) = 0;  
 
 %% Body 2: Front Flap
-body(2) = bodyClass('../../../hydroData/Analysis.h5',2);                     
+body(2) = bodyClass('../../../hydroData/Analysis.h5');                     
 body(2).geometryFile = '../../../geometry/flap.stl';
 body(2).mass = 23.1;      %[kg] from Hinsdale
 body(2).momOfInertia = [1.42 1.19 1.99];  %[kg-m^2] from Hinsdale
@@ -37,7 +37,7 @@ body(2).viscDrag.characteristicArea(1) = 0.5; % 0.402424;  %[m^2] h=0.5m w=0.7m
 body(2).linearDamping(1) = 0;  
 
 %% Body 3: Platform
-body(3) = bodyClass('../../../hydroData/Analysis.h5',3);                     
+body(3) = bodyClass('../../../hydroData/Analysis.h5');                     
 body(3).geometryFile = '../../../geometry/platform.stl';
 body(3).mass = 153.8;   %[kg] from Hinsdale
 body(3).momOfInertia = [37.88 29.63 66.2529];  %[kg-m^2] from Hinsdale - UPDATE Izz
@@ -46,7 +46,7 @@ body(3).viz.opacity = 0.25;
 
 %% Arm Mass Properties 
 %% Body 4: Arm - Rectangle Frame (attached to FOSWEC)
-body(4) = bodyClass('',[]);
+body(4) = bodyClass('');
 body(4).nhBody = 1;
 body(4).name = 'arm_rectangle';
 body(4).mass = 47.7; %[kg] (from Pedro)
@@ -58,7 +58,7 @@ body(4).viz.color = [1 0 0];
 body(4).viz.opacity = 1;
 
 %% Body 5: Arm - Pitching Squares
-body(5) = bodyClass('',[]);
+body(5) = bodyClass('');
 body(5).nhBody = 1;
 body(5).name = 'arm_squares';
 body(5).mass = 4.47;  %[kg]                             %UPDATE THIS
@@ -70,7 +70,7 @@ body(5).viz.color = [0 1 0];
 body(5).viz.opacity = 1;
 
 %% Body 6: Arm - Heaving Cylinder
-body(6) = bodyClass('',[]);
+body(6) = bodyClass('');
 body(6).nhBody = 1;
 body(6).name = 'arm_cylinder';
 body(6).mass = 23.84;   %[kg] (from Pedro)
@@ -82,7 +82,7 @@ body(6).viz.color = [0 0 1];
 body(6).viz.opacity = 1;
 
 %% Body 7: Arm - Fixed Cylinder (attached to seafloor)
-body(7) = bodyClass('',[]);
+body(7) = bodyClass('');
 body(7).nhBody = 1;
 body(7).name = 'arm_cylinderFixed';
 body(7).mass = 1;
@@ -102,19 +102,20 @@ body(7).viz.opacity = 0.25;
 constraint(1)= constraintClass('rectangle_fixed');
 constraint(1).loc = [0 0 -0.5];
 
-%% Constraint 2
+%% Constraint 2 - Surge
 constraint(2)= constraintClass('arm_surge');
 constraint(2).loc = [0 0 -0.5];
+constraint(2).orientation.z = [1 0 0];
 
-constraint(2).mooring.initLinDispAngle(1) = 0.1;
-constraint(2).mooring.k(1,1) = 925; %[N/m]   %based on static offset test 904-962 N/m
-constraint(2).mooring.c(1,1) = 770; %[N/m/s]
+mooring(1) = mooringClass('bungees');
+mooring(1).matrix.k(1,1) = 925; %[N/m]   %based on static offset test 904-962 N/m
+mooring(1).matrix.c(1,1) = 770; %[N/m/s]
 
-%% Constraint 3
+%% Constraint 3 - Pitch
 constraint(3)= constraintClass('arm_pitch');
 constraint(3).loc = [0 0 -0.5];
 
-%% Constraint 4
+%% Constraint 4 - Heave
 constraint(4)= constraintClass('arm_heave');
 constraint(4).loc = [0 0 -0.75];
 

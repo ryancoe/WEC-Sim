@@ -1,10 +1,184 @@
-wecSimMRC Case 2
+wecSimMCR Case 2
 
 WEC-Sim Read Input File ...   
-Elapsed time is 13.044810 seconds.
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+Elapsed time is 13.621907 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.069921 seconds.
+Elapsed time is 0.082472 seconds.
 
 WEC-Sim Simulation Settings:
 	Time Marching Solver                 = Fourth-Order Runge-Kutta Formula 
@@ -54,7 +228,7 @@ List of Constraint(s): Number of Constraints = 7
 
 
 Simulating the WEC device defined in the SimMechanics model FOSWEC_Heave.slx...   
-Elapsed time is 7.615927 seconds.
+Elapsed time is 7.899450 seconds.
 
 Post-processing and saving...   
-Elapsed time is 0.016664 seconds.
+Elapsed time is 0.020909 seconds.
