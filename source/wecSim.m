@@ -1,4 +1,19 @@
 %%% WEC-Sim run file
+%%
+%% Following Classes are required to be defined in the WEC-Sim input file:
+%%
+%% simu = simulationClass();                                               - To Create the Simulation Variable                                     
+%%
+%% waves = waveClass('<wave type>');                                       - To create the Wave Variable and Specify Type
+%%
+%% body(<body number>) = bodyClass('<hydrodynamics data file name>.h5');   - To initialize bodyClass:                             
+%% 
+%% constraint(<constraint number>) = constraintClass('<Constraint name>'); - To initialize constraintClass          
+%% pto(<PTO number>) = ptoClass('<PTO name>');                             - To initialize ptoClass    
+%% 
+%% mooring(<mooring number>) = mooringClass('<Mooring name>');             - To initialize mooringClass (only needed when mooring blocks are used)
+%% 
+%%
 
 %% Start WEC-Sim log
 bdclose('all'); clc; diary off; close all; 
@@ -275,7 +290,7 @@ hspressure = {};
 wpressurenl = {};
 wpressurel = {};
 for ii = 1:length(body(1,:))
-    if simu.nlHydro~=0
+    if simu.nlHydro~=0 && body(ii).nhBody==0
         % hydrostatic pressure
         eval(['hspressure{' num2str(ii) '} = body' num2str(ii) '_hspressure_out;']);
         % wave (Froude-Krylov) nonlinear pressure
@@ -330,7 +345,7 @@ if simu.paraview == 1
     for ii = 1:length(body(1,:))
         bodyname = output.bodies(ii).name;
         mkdir(['vtk' filesep 'body' num2str(ii) '_' bodyname]);
-        body(ii).write_paraview_vtp(output.bodies(ii).time, output.bodies(ii).position, bodyname, simu.simMechanicsFile, datestr(simu.simulationDate), hspressure{ii}.signals.values, wpressurenl{ii}.signals.values, wpressurel{ii}.signals.values);
+        body(ii).write_paraview_vtp(output.bodies(ii).time, output.bodies(ii).position, bodyname, simu.simMechanicsFile, datestr(simu.simulationDate), hspressure{ii}, wpressurenl{ii}, wpressurel{ii});
         bodies{ii} = bodyname;
         fprintf(fid,[bodyname '\n']);
         fprintf(fid,[num2str(body(ii).viz.color) '\n']);
