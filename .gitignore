@@ -48,10 +48,11 @@ view_html.sh
 *.toc
 *.zip
 
+*.xlsx
+
 .DS_Store
 
 # MATLAB
-*/output/
-*/output_previous/
-*/slprj
+**/output/
+**/slprj
 *build_exception*

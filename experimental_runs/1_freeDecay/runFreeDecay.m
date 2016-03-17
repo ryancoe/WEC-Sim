@@ -4,29 +4,29 @@
 clear all; close all; clc;
 
 %% Heave Decay
-cd heaveDecay\heaveDecay_damping\
+cd heaveDecay\
 wecSimMCR
 plotHeaveDecay
 clear all
-cd ../..
+cd ..
 
 %% Pitch Decay
-cd pitchDecay\pitchDecay_damping\
+cd pitchDecay\
 wecSimMCR
 plotPitchDecay
 clear all
-cd ../..
+cd ..
 
 %% Surge Decay
-cd surgeDecay\surgeDecay_stiffness_damping\
+cd surgeDecay\
 wecSimMCR
 plotSurgeDecay
 clear all
-cd ../..
+cd ..
 
 %% Flap Decay
-cd flapDecay\flapDecay_damping\
+cd flapDecay\
 wecSimMCR
 plotFlapDecay
 clear all
-cd ../..
+cd ..
