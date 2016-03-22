@@ -1,6 +1,6 @@
 
 figure(); hold on;
-load('../test/AQWAFlapPitchLinearHydrostaticFreeDecay.mat') 
+load('./test/AQWAFlapPitchLinearHydrostaticFreeDecay.mat') 
 Damp = [0, 0.5, 1, 1.5];
 Ang = [5,10,15];
 for id = 1:length(Damp)

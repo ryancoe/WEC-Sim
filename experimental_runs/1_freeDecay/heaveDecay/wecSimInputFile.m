@@ -8,6 +8,7 @@ simu.simMechanicsFile = 'FOSWEC_Heave.slx';
 simu.rampT = 0;
 simu.endTime = 10;
 simu.dt = 0.05;
+simu.nlHydro = 1;
 simu.mode = 'normal';
 simu.explorer = 'on';
 simu.domainSize = 2;

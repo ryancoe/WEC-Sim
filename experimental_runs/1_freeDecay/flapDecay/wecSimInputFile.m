@@ -5,17 +5,18 @@
 %% Simulation Data
 simu=simulationClass();
 simu.simMechanicsFile = 'FOSWEC_flapPitch.slx';
-simu.rampT = 0;
-simu.endTime = 15;
+simu.rampT = 1;
+simu.endTime = 4;
 simu.dt = 0.025;
+simu.nlHydro = 1;
 simu.mode = 'normal';
 simu.explorer = 'on';
 simu.domainSize = 2;
-simu.CITime = 50;       %this is a numerical trick, CItime shouldnt be this long, check hydroData
 simu.mcrCaseFile = 'flapDecayCase.mat';
 
 %% Wave Information
-waves = waveClass('noWaveCIC');
+waves = waveClass('noWave');
+waves.noWaveHydrodynamicCoeffT=2*pi/4;
 
 %% Body Data
 ic = [-0.65 0 -0.5]; %ic of pitch rotation
@@ -35,11 +36,10 @@ body(2).cg = [-0.65 0.0 -0.29];             %[m] for setInitDisp
 body(2).momOfInertia = [1.58 1.62 1.25];    %[kg-m^2] from Hinsdale
 
 body(2).setInitDisp(ic, [0 1 0], phi*pi/180, [0 0 0]);
-body(2).linearDamping(5) = 10;  
+% body(2).linearDamping(5) = 10;  
 body(2).viscDrag.cd(5) = 8;                 % see Babarit ref
-body(2).viscDrag.characteristicArea(5) = 0.01429167;  %[m^2] h=0.5m w=0.7m 
+body(2).viscDrag.characteristicArea(5) = 0.0062;  %[m^2] w=0.76;h=0.46
 % second momoent area - https://en.wikipedia.org/wiki/List_of_area_moments_of_inertia
-% Iy = 1/12*w^3*h = -0.98571
 
 %% Body 3: Platform
 body(3) = bodyClass('../../hydroData/Analysis.h5');                     
