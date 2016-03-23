@@ -29,7 +29,7 @@ hold on
 set(gca,'ColorOrderIndex',1)
 set(gcf, 'Color', 'w');
 for i = 1:length(mcr.cases)
-    load(['./flapDecayCase_',num2str(mcr.cases(i),'%2g'),'deg/FOSWEC_flapPitch_matlabWorkspace.mat']) 
+    load(['./flapDecay_nonlinear/flapDecayCase_',num2str(mcr.cases(i),'%2g'),'deg/FOSWEC_flapPitch_matlabWorkspace.mat']) 
     plot(output.bodies(2).time,output.bodies(2).position(:,5)*180/pi/theta(i),'-.','LineWidth',1.5);   
     hold on
 end
@@ -53,7 +53,7 @@ for i = 1:length(theta)
 end
 legend(leg,'location','northeast')
 % title('Exp WS Flap Decay (All)')
-title(['Exp WS Flap Decay (NonLinear, cd ',num2str(body(2).viscDrag.cd(5),'%2g'),', c ',num2str(body(2).linearDamping(5),'%2g'),')'])
+title(['Flap Decay Exp, NonLinear, Linear (cd ',num2str(body(2).viscDrag.cd(5),'%2g'),', c ',num2str(body(2).linearDamping(5),'%2g'),')'])
 
 savefig('flapPitch_Exp_WS_All_norm.fig')
 
