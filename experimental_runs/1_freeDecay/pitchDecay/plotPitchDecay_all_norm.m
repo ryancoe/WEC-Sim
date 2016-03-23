@@ -25,16 +25,6 @@ end
 
 theta = [2,3,5,7,8.4];
 
-% %NonLinear WS
-% hold on
-% set(gca,'ColorOrderIndex',1)
-% set(gcf, 'Color', 'w');
-% for i = 1:length(mcr.cases)
-%     load(['./flapDecay_nonlinear/flapDecayCase_',num2str(mcr.cases(i),'%2g'),'deg/FOSWEC_flapPitch_matlabWorkspace.mat']) 
-%     plot(output.bodies(2).time,output.bodies(2).position(:,5)*180/pi/theta(i),'-.','LineWidth',1.5);   
-%     hold on
-% end
-
 %Linear WS
 hold on
 set(gca,'ColorOrderIndex',1)
@@ -45,6 +35,27 @@ for i = 1:length(mcr.cases)
     hold on
 end
 
+%NonLinear WS, platform Cd
+hold on
+set(gca,'ColorOrderIndex',1)
+set(gcf, 'Color', 'w');
+for i = 1:length(mcr.cases)
+    load(['./pitchDecay_nonlinear/pitchDecayCase_',num2str(mcr.cases(i),'%2g'),'deg/FOSWEC_Pitch_matlabWorkspace.mat']) 
+    plot(output.bodies(2).time,output.bodies(2).position(:,5)*180/pi/theta(i),'-.','LineWidth',1.5);   
+    hold on
+end
+
+% %NonLinear WS, flap Cd
+% hold on
+% set(gca,'ColorOrderIndex',1)
+% set(gcf, 'Color', 'w');
+% for i = 1:length(mcr.cases)
+%     load(['./pitchDecay_nonlinear_flapCd/pitchDecayCase_',num2str(mcr.cases(i),'%2g'),'deg/FOSWEC_Pitch_matlabWorkspace.mat']) 
+%     plot(output.bodies(2).time,output.bodies(2).position(:,5)*180/pi/theta(i),'-.','LineWidth',1.5);   
+%     hold on
+% end
+
+
 xlabel('t [s]')
 ylabel('\theta/\theta_o')
 xlim([-0.5 8])
@@ -52,6 +63,6 @@ for i = 1:length(theta)
     leg{i} = ['\theta_0 = ' num2str(theta(i),3) '^o'];
 end
 legend(leg,'location','northeast')
-title('Pitch Decay Exp, Linear (cd1.28 c50)')
+title(['Pitch Decay Exp, Linear, Nonlinear (cd ',num2str(body(3).viscDrag.cd(5),'%2g'),', c ',num2str(body(3).linearDamping(5),'%2g'),')'])
 
 savefig('pitchDecay_norm_Exp_WS.fig')

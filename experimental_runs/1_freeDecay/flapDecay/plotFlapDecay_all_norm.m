@@ -47,12 +47,10 @@ end
 xlabel('t [s]')
 ylabel('\theta/\theta_o')
 xlim([-0.5 6.25])
-% ylim([-15 20]);
 for i = 1:length(theta)
     leg{i} = ['\theta_0 = ' num2str(theta(i),3) '^o'];
 end
 legend(leg,'location','northeast')
-% title('Exp WS Flap Decay (All)')
 title(['Flap Decay Exp, NonLinear, Linear (cd ',num2str(body(2).viscDrag.cd(5),'%2g'),', c ',num2str(body(2).linearDamping(5),'%2g'),')'])
 
 savefig('flapDecay_norm_Exp_WS.fig')

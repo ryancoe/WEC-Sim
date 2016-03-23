@@ -39,7 +39,7 @@ hold on
 set(gca,'ColorOrderIndex',1)
 set(gcf, 'Color', 'w');
 for i = 1:length(mcr.cases(:,1))
-    load(['./surgeDecay_linear/surgeDecayCase_',num2str(mcr.cases(i)*100,'%2g'),'cm/FOSWEC_Surge_matlabWorkspace.mat']) 
+    load(['./surgeDecay_linear_k962/surgeDecayCase_',num2str(mcr.cases(i)*100,'%2g'),'cm/FOSWEC_Surge_matlabWorkspace.mat']) 
     plot(output.bodies(3).time,(output.bodies(3).position(:,1)-body(3).cg(1))*100/disp(i),':','LineWidth',1.5);   
     hold on
 end
@@ -58,10 +58,8 @@ end
 xlabel('t [s]')
 ylabel('x/x_o')
 xlim([-0.5 3.5])
-for i = 1:length(disp)
-    leg{i} = ['z_0 = ' num2str(disp(i),3) '^o'];
-end
-legend(leg,'location','northeast')
-title('Surge Decay Exp, Linear (c770 cd1.28 k925)')
+legend('x_0 = 7cm','x_0 = 10cm','x_0 = 15cm','x_0 = 20cm')
+title(['Platform Surge Decay (cd 1.28, c ',num2str(mooring(1).matrix.c(1,1),'%2g'),', k ',num2str(mooring(1).matrix.k(1,1),'%2g'),')'])
+
 
 savefig('surgeDecay_norm_Exp_WS.fig')

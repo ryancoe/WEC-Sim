@@ -62,6 +62,9 @@ for i = 1:length(disp)
     leg{i} = ['z_0 = ' num2str(disp(i),3) '^o'];
 end
 legend(leg,'location','northeast')
-title('Heave Decay (Exp, Linear c450, Linear cd0)')
+% title('Heave Decay (Exp, Linear c450, Linear cd0)')
+title(['Heave Decay Exp, Linear (cd 1.28, c ',num2str(body(3).linearDamping(3),'%2g'),...
+   ') Linear (cd ',num2str(body(3).viscDrag.cd(3),'%2g'),', c ',num2str(body(3).linearDamping(3),'%2g'),')'])
+
 
 savefig('heaveDecay_norm_Exp_WS.fig')
