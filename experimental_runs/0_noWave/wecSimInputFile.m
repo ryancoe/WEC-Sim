@@ -15,8 +15,6 @@ simu.CITime=15;
 
 %% Wave Information
 waves = waveClass('noWaveCIC');
-% waves = waveClass('noWave');
-% waves.noWaveHydrodynamicCoeffT=2*pi/0.7222053;
 
 %% Body Data
 %% Body 1: Back Flap

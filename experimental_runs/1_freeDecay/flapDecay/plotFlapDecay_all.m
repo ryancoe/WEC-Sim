@@ -6,6 +6,7 @@ clear all; close all; clc;
 load('flapDecayCase.mat')
 load ./exp/Flap1Decay_postp_mean.mat
 
+
 %% Plot Exp and WS Data
 
 figure;
@@ -22,23 +23,13 @@ for i = 1:5
     errorbar(T_mean(i).t_error_bar,T_mean(i).y(ind(:)),T_mean(i).error_bar,'*'); hold on;
 end
 
-%NonLinear WS
+
 hold on
 set(gca,'ColorOrderIndex',1)
 set(gcf, 'Color', 'w');
 for i = 1:length(mcr.cases)
     load(['./flapDecayCase_',num2str(mcr.cases(i),'%2g'),'deg/FOSWEC_flapPitch_matlabWorkspace.mat']) 
     plot(output.bodies(2).time,output.bodies(2).position(:,5)*180/pi,'-.','LineWidth',1.5);   
-    hold on
-end
-
-%Linear WS
-hold on
-set(gca,'ColorOrderIndex',1)
-set(gcf, 'Color', 'w');
-for i = 1:length(mcr.cases)
-    load(['./flapDecay_linear/flapDecayCase_',num2str(mcr.cases(i),'%2g'),'deg/FOSWEC_flapPitch_matlabWorkspace.mat']) 
-    plot(output.bodies(2).time,output.bodies(2).position(:,5)*180/pi,':','LineWidth',1.5);   
     hold on
 end
 
@@ -51,30 +42,32 @@ for i = 1:length(delta_theta)
     leg{i} = ['\theta_0 = ' num2str(delta_theta(i),3) '^o'];
 end
 legend(leg,'location','northeast')
-title('Exp WS Flap Decay (All)')
+% title('Exp WS Flap Decay (NonLinear)')
 
-savefig('flapPitch_Exp_WS_All.fig')
+title(['Exp WS Flap Decay (NonLinear, cd ',num2str(body(2).viscDrag.cd(5),'%2g'),', c ',num2str(body(2).linearDamping(5),'%2g'),')'])
+
+savefig('flapPitch_Exp_WS.fig')
 
 %% Old Figs
 
 %% Plot WEC-Sim
 
-% figure; 
-% for i = 1:length(mcr.cases)
-%     load(['./flapDecayCase_',num2str(mcr.cases(i),'%2g'),'deg/FOSWEC_flapPitch_matlabWorkspace.mat']) 
-%     plot(output.bodies(2).time,output.bodies(2).position(:,5)*180/pi);   
-%     hold on
-% end
-% 
-% title(['WEC-Sim Flap Decay (cd ',num2str(body(2).viscDrag.cd(5),'%2g'),', c ',num2str(body(2).linearDamping(5),'%2g'),')'])
-% xlabel('Time (s)')
-% ylabel('Displacement (deg)')
-% xlim([0 8]);
-% ylim([-15 20]);
-% legend('5deg','7deg','10deg','15deg','20deg')
-% grid on
-% 
-% savefig('flapPitch_WS.fig')
+figure; 
+for i = 1:length(mcr.cases)
+    load(['./flapDecayCase_',num2str(mcr.cases(i),'%2g'),'deg/FOSWEC_flapPitch_matlabWorkspace.mat']) 
+    plot(output.bodies(2).time,output.bodies(2).position(:,5)*180/pi);   
+    hold on
+end
+
+title(['WEC-Sim Flap Decay (cd ',num2str(body(2).viscDrag.cd(5),'%2g'),', c ',num2str(body(2).linearDamping(5),'%2g'),')'])
+xlabel('Time (s)')
+ylabel('Displacement (deg)')
+xlim([0 8]);
+ylim([-15 20]);
+legend('5deg','7deg','10deg','15deg','20deg')
+grid on
+
+savefig('flapPitch_WS.fig')
 
 
 %% Plot Exp and WS Data

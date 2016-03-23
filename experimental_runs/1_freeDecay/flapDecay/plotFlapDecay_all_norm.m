@@ -52,7 +52,8 @@ for i = 1:length(theta)
     leg{i} = ['\theta_0 = ' num2str(theta(i),3) '^o'];
 end
 legend(leg,'location','northeast')
-title('Exp WS Flap Decay (All)')
+% title('Exp WS Flap Decay (All)')
+title(['Exp WS Flap Decay (NonLinear, cd ',num2str(body(2).viscDrag.cd(5),'%2g'),', c ',num2str(body(2).linearDamping(5),'%2g'),')'])
 
 savefig('flapPitch_Exp_WS_All_norm.fig')
 

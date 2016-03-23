@@ -24,7 +24,7 @@ for i = 1:5
 end
 
 disp = [3,5,7,10,15];
-% %NonLinear WS
+%NonLinear WS
 % hold on
 % set(gca,'ColorOrderIndex',1)
 % set(gcf, 'Color', 'w');
@@ -39,19 +39,29 @@ hold on
 set(gca,'ColorOrderIndex',1)
 set(gcf, 'Color', 'w');
 for i = 1:length(mcr.cases(:,1))
-    load(['./heaveDecay_linear/heaveDecayCase_',num2str(mcr.cases(i)*100,'%2g'),'cm/FOSWEC_Heave_matlabWorkspace.mat']) 
+    load(['./heaveDecay_linear_c450/heaveDecayCase_',num2str(mcr.cases(i)*100,'%2g'),'cm/FOSWEC_Heave_matlabWorkspace.mat']) 
     plot(output.bodies(2).time,(output.bodies(2).position(:,3)-body(2).cg(3))*100/disp(i),':','LineWidth',1.5);   
     hold on
 end
 
+%Linear WS noCd
+hold on
+set(gca,'ColorOrderIndex',1)
+set(gcf, 'Color', 'w');
+for i = 1:length(mcr.cases(:,1))
+    load(['./heaveDecay_linear_c450_cd0/heaveDecayCase_',num2str(mcr.cases(i)*100,'%2g'),'cm/FOSWEC_Heave_matlabWorkspace.mat']) 
+    plot(output.bodies(2).time,(output.bodies(2).position(:,3)-body(2).cg(3))*100/disp(i),'-.','LineWidth',1.5);   
+    hold on
+end
+
+
 xlabel('t [s]')
 ylabel('z/z_o')
 xlim([-0.5 3.5])
-% ylim([-15 20]);
 for i = 1:length(disp)
     leg{i} = ['z_0 = ' num2str(disp(i),3) '^o'];
 end
 legend(leg,'location','northeast')
-title('Exp WS Heave Decay (All)')
+title('Heave Decay (Exp, Linear c450, Linear cd0)')
 
 savefig('Heave_Exp_WS_All_norm.fig')
