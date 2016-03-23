@@ -53,6 +53,5 @@ for i = 1:length(theta)
 end
 legend(leg,'location','northeast')
 title('Pitch Decay Exp, Linear (cd1.28 c50)')
-% title(['Flap Decay Exp, NonLinear, Linear (cd ',num2str(body(2).viscDrag.cd(5),'%2g'),', c ',num2str(body(2).linearDamping(5),'%2g'),')'])
 
-savefig('flapPitch_Exp_WS_All_norm.fig')
+savefig('pitchDecay_norm_Exp_WS.fig')
