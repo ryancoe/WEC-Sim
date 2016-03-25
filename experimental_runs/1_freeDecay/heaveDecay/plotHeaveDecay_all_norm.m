@@ -39,7 +39,7 @@ hold on
 set(gca,'ColorOrderIndex',1)
 set(gcf, 'Color', 'w');
 for i = 1:length(mcr.cases(:,1))
-    load(['./heaveDecay_linear_c450/heaveDecayCase_',num2str(mcr.cases(i)*100,'%2g'),'cm/FOSWEC_Heave_matlabWorkspace.mat']) 
+    load(['./heaveDecay_linear_c450_cd128/heaveDecayCase_',num2str(mcr.cases(i)*100,'%2g'),'cm/FOSWEC_Heave_matlabWorkspace.mat']) 
     plot(output.bodies(2).time,(output.bodies(2).position(:,3)-body(2).cg(3))*100/disp(i),':','LineWidth',1.5);   
     hold on
 end

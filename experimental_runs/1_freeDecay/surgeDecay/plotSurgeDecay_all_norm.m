@@ -23,7 +23,6 @@ for i = 1:4
     errorbar(T_mean(i).t_error_bar,T_mean(i).y_norm(ind(:)),T_mean(i).error_bar_norm,'*'); hold on;
 end
 
-disp = [7,10,15,20];
 %NonLinear WS
 % hold on
 % set(gca,'ColorOrderIndex',1)
@@ -40,6 +39,7 @@ set(gca,'ColorOrderIndex',1)
 set(gcf, 'Color', 'w');
 for i = 1:length(mcr.cases(:,1))
     load(['./surgeDecay_linear_k962/surgeDecayCase_',num2str(mcr.cases(i)*100,'%2g'),'cm/FOSWEC_Surge_matlabWorkspace.mat']) 
+    clear disp; disp = [7,10,15,20];
     plot(output.bodies(3).time,(output.bodies(3).position(:,1)-body(3).cg(1))*100/disp(i),':','LineWidth',1.5);   
     hold on
 end
