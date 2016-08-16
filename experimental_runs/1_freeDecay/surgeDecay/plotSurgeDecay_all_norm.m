@@ -23,16 +23,6 @@ for i = 1:4
     errorbar(T_mean(i).t_error_bar,T_mean(i).y_norm(ind(:)),T_mean(i).error_bar_norm,'*'); hold on;
 end
 
-%NonLinear WS
-% hold on
-% set(gca,'ColorOrderIndex',1)
-% set(gcf, 'Color', 'w');
-% for i = 1:length(mcr.cases(:,1))
-%     load(['./heaveDecayCase_',num2str(mcr.cases(i)*100,'%2g'),'cm/FOSWEC_Heave_matlabWorkspace.mat']) 
-%     plot(output.bodies(2).time,(output.bodies(2).position(:,3)-body(2).cg(3))*100/disp(i),'-.','LineWidth',1.5);   
-%     hold on
-% end
-
 %Linear WS
 hold on
 set(gca,'ColorOrderIndex',1)
@@ -43,23 +33,10 @@ for i = 1:length(mcr.cases(:,1))
     plot(output.bodies(3).time,(output.bodies(3).position(:,1)-body(3).cg(1))*100/disp(i),':','LineWidth',1.5);   
     hold on
 end
-% 
-% %Linear WS noCd
-% hold on
-% set(gca,'ColorOrderIndex',1)
-% set(gcf, 'Color', 'w');
-% for i = 1:length(mcr.cases(:,1))
-%     load(['./heaveDecay_linear_c450_cd0/heaveDecayCase_',num2str(mcr.cases(i)*100,'%2g'),'cm/FOSWEC_Heave_matlabWorkspace.mat']) 
-%     plot(output.bodies(2).time,(output.bodies(2).position(:,3)-body(2).cg(3))*100/disp(i),'-.','LineWidth',1.5);   
-%     hold on
-% end
-% 
 
 xlabel('t [s]')
 ylabel('x/x_o')
 xlim([-0.5 3.5])
 legend('x_0 = 7cm','x_0 = 10cm','x_0 = 15cm','x_0 = 20cm')
-title(['Platform Surge Decay (cd 1.28, c ',num2str(mooring(1).matrix.c(1,1),'%2g'),', k ',num2str(mooring(1).matrix.k(1,1),'%2g'),')'])
-
-
+% title(['Platform Surge Decay (cd 1.28, c ',num2str(mooring(1).matrix.c(1,1),'%2g'),', k ',num2str(mooring(1).matrix.k(1,1),'%2g'),')'])
 savefig('surgeDecay_norm_Exp_WS.fig')

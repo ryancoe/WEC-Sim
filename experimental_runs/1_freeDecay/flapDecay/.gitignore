@@ -1,4 +1,4 @@
 output/
 slprj/
-**/
+test/
 *.xlsx
