@@ -1,0 +1,233 @@
+wecSimMCR Case 1
+
+WEC-Sim Read Input File ...   
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+
+body = 
+
+  1x7 <a href="matlab:helpPopup bodyClass" style="font-weight:bold">bodyClass</a> array with properties:
+
+    hydroData
+    name
+    mass
+    momOfInertia
+    cg
+    dispVol
+    geometryFile
+    viscDrag
+    initDisp
+    linearDamping
+    userDefinedExcIRF
+    viz
+    morrisonElement
+    nhBody
+    bodyGeometry
+    hydroForce
+    h5File
+    hydroDataBodyNum
+    bemioFlag
+    massCalcMethod
+    bodyNumber
+    bodyTotal
+    lenJ
+
+Elapsed time is 59.376376 seconds.
+
+WEC-Sim Pre-processing ...   
+Elapsed time is 0.854395 seconds.
+
+WEC-Sim Simulation Settings:
+	Start Time                     (sec) = 0
+	End Time                       (sec) = 10
+	Time Step Size                 (sec) = 0.05
+	Ramp Function Time             (sec) = 0
+	Total Number of Time Step            = 200 
+
+Wave Environment: 
+	Wave Type                            = No Wave (Convolution Integral Calculation)
+
+List of Body: Number of Bodies = 3 
+
+	***** Body Number 0, Name: flap2 *****
+	Body CG                          (m) = [0.65,0,-0.338]
+	Body Mass                       (kg) = 23.19 
+	Body Diagonal MOI              (kgm2)= [1.58,1.62,1.25]
+
+	***** Body Number 1, Name: flap1 *****
+	Body CG                          (m) = [-0.65,0,-0.338]
+	Body Mass                       (kg) = 23.14 
+	Body Diagonal MOI              (kgm2)= [1.42,1.19,1.99]
+
+	***** Body Number 2, Name: platform *****
+	Body CG                          (m) = [0,0,-0.156]
+	Body Mass                       (kg) = 176.04 
+	Body Diagonal MOI              (kgm2)= [37.88,29.63,53.61]
+
+List of PTO(s): No PTO in the system
+
+List of Constraint(s): Number of Constraints = 7 
+
+	***** Constraint Name: arm_wec *****
+
+	***** Constraint Name: arm_surge *****
+
+	***** Constraint Name: arm_pitch *****
+
+	***** Constraint Name: arm_heave *****
+
+	***** Constraint Name: arm_floor *****
+
+	***** Constraint Name: PTO_flap1 *****
+
+	***** Constraint Name: PTO_flap2 *****
+
+
+Simulating the WEC device defined in the SimMechanics model FOSWEC_Heave.slx...   
+Elapsed time is 42.188916 seconds.
+
+Post-processing and saving...   
+Elapsed time is 5.777644 seconds.
