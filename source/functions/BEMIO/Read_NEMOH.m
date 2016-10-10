@@ -16,7 +16,7 @@ tmp(cellfun('isempty',tmp)) = [];
 hydro(F).file = tmp{length(tmp)};  % Base name
 
 %% nemoh.cal file
-fileID = fopen([filedir 'nemoh.cal']);
+fileID = fopen(fullfile(filedir,'nemoh.cal'));
 raw = textscan(fileID,'%[^\n\r]');  %Read nemoh.cal
 raw = raw{:};
 fclose(fileID);
@@ -63,9 +63,9 @@ waitbar(1/5);
 %% Hydrostatics file(s)
 for m = 1:hydro(F).Nb
     if hydro(F).Nb == 1
-        fileID = fopen([filedir 'Mesh\Hydrostatics.dat']);
+        fileID = fopen(fullfile(filedir,'Mesh','Hydrostatics.dat'));
     else
-        fileID = fopen([filedir 'Mesh\Hydrostatics_' num2str(m-1) '.dat']);
+        fileID = fopen([fullfile(filedir,'Mesh','Hydrostatics_'),num2str(m-1),'.dat']);
     end
     raw = textscan(fileID,'%[^\n\r]');  % Read Hydrostatics.dat
     raw = raw{:};
@@ -83,9 +83,9 @@ waitbar(2/5);
 %% KH file(s)
 for m = 1:hydro(F).Nb
     if hydro(F).Nb == 1
-        fileID = fopen([filedir 'Mesh\KH.dat']);
+        fileID = fopen(fullfile(filedir,'Mesh','KH.dat'));
     else
-        fileID = fopen([filedir 'Mesh\KH_' num2str(m-1) '.dat']);
+        fileID = fopen([fullfile(filedir,'Mesh','KH_'),num2str(m-1),'.dat']);
     end
     raw = textscan(fileID,'%[^\n\r]');
     raw = raw{:};
@@ -98,7 +98,7 @@ end
 waitbar(3/5);
 
 %% Radiation Coefficient file
-fileID = fopen([filedir 'Results\RadiationCoefficients.tec']);
+fileID = fopen(fullfile(filedir,'Results','RadiationCoefficients.tec'));
 raw = textscan(fileID,'%[^\n\r]');
 raw = raw{:};
 fclose(fileID);
@@ -117,7 +117,7 @@ end
 waitbar(4/5);
 
 %% Excitation Force file
-fileID = fopen([filedir 'Results\ExcitationForce.tec']);
+fileID = fopen(fullfile(filedir,'Results','ExcitationForce.tec'));
 raw = textscan(fileID,'%[^\n\r]');
 raw = raw{:};
 fclose(fileID);
