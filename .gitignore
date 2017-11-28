@@ -1,8 +1,6 @@
-view_html.sh
-*.sublime-workspace
-*.sublime-project
-*vis-temp*
+$ cat .gitignore
 
+# File Types
 *~
 *.acn
 *.acr
@@ -18,6 +16,7 @@ view_html.sh
 *.DS_Store
 *.dvi
 *.exp
+*.fig
 *.glg
 *.glo
 *.gls
@@ -42,16 +41,36 @@ view_html.sh
 *.mtc3
 *.o
 *.obj
+*.sublime-workspace
+*.sublime-project
 *.synctex
 *.synctex.gz
 *.synctex.gz(busy)
 *.toc
+*.tws
+*.vtp
 *.zip
 
-.DS_Store
-
 # MATLAB
-*/output/
-*/output_previous/
-*/slprj
+**/output/
+**/output_previous/
+**/slprj/
 *build_exception*
+
+# Tutorials
+/tutorials/BEMIO/**/*.h5
+/tutorials/verificationCases/**/**/*.mat
+!/tutorials/verificationCases/RegularWaves/regular/regular_org.mat
+!/tutorials/verificationCases/RegularWaves/regularCIC/regularCIC_org.mat
+!/tutorials/verificationCases/RegularWaves/regularSS/regularSS_org.mat
+!/tutorials/verificationCases/IrregularWaves/irregularSS/irregularSS_org.mat
+!/tutorials/verificationCases/IrregularWaves/irregularCIC/irregularCIC_org.mat
+
+# moorDyn
+source/functions/moorDyn/*
+!source/functions/moorDyn/README.md
+
+# Other
+.DS_Store
+view_html.sh
+*vis-temp*

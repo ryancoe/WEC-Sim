@@ -31,13 +31,13 @@ else
     end
     
     numConditions=2;
-    if length(waves.randPreDefined)>1;
+    if length(waves.phaseSeed)>1;
         numConditions=numConditions+1;
-        mcr.header{numConditions} = 'waves.randPreDefined';
+        mcr.header{numConditions} = 'waves.phaseSeed';
         len = length(mcr.cases(:,1));
-        for nseed=1:length(waves.randPreDefined)
+        for nseed=1:length(waves.phaseSeed)
             mcr.cases(len*(nseed-1)+1:len*(nseed-1)+len,1:numConditions-1) = mcr.cases(1:len,1:numConditions-1);
-            mcr.cases(len*(nseed-1)+1:len*(nseed-1)+len,    numConditions) = waves.randPreDefined(nseed);
+            mcr.cases(len*(nseed-1)+1:len*(nseed-1)+len,    numConditions) = waves.phaseSeed(nseed);
         end
     end
     
@@ -63,10 +63,28 @@ else
         end; clear i j k l1 l2 m n name nseed kkk len numConditions
     end
 end
-
+%%
+% % Check to see if changing h5 file between runs
+% % If one of the MCR headers is body(#).h5File, then the hydro data will be
+% % loaded from the h5 file for each condition run. 
+% % reloadHydroDataFlag = true;
+% if isempty(cell2mat(regexp(mcr.header, 'body\(\d+\).h5File')))
+%     reloadHydroDataFlag = false;
+%     clear hydroData
+% end
+%%
 % Run WEC-Sim
 warning('off','MATLAB:DELETE:FileNotFound'); delete('mcrCase*.mat')
 for imcr=1:length(mcr.cases(:,1))
     wecSim;
     if exist('userDefinedFunctionsMCR.m','file') == 2; userDefinedFunctionsMCR; end
-end; clear imcr ans;
+%%    %Store hydrodata in memory for reuse in future runs.
+    if simu.reloadH5Data == 0 && imcr == 1        % Off->'0', On->'1', (default = 0)  
+        for ii = 1:simu.numWecBodies 
+            hydroData(ii) = body(ii).hydroData;
+        end
+    end
+end; clear imcr ans hydroData 
+%%
+
+

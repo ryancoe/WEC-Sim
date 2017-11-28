@@ -62,7 +62,6 @@ classdef bodyClass<handle
         hydroForce        = struct()                                            % Hydrodynamic forces and coefficients used during simulation.
         h5File            = ''                                                  % hdf5 file containing the hydrodynamic data
         hydroDataBodyNum  = []                                                  % Body number within the hdf5 file.
-        bemioFlag         = 1                                                   % Flag. 1 = Bemio was used to generate the data. 0 =Bemio was not used to generate the data.
         massCalcMethod    = []                                                  % Method used to obtain mass: 'user', 'fixed', 'equilibrium'
         bodyNumber        = []                                                  % bodyNumber in WEC-Sim as defined in the input file. Can be different from the BEM body number.
         bodyTotal         = []                                                  % Total number of WEC-Sim bodies (body block iterations)
@@ -110,6 +109,15 @@ classdef bodyClass<handle
             try obj.hydroData.hydro_coeffs.radiation_damping.state_space.C.all = h5load(filename, [name '/hydro_coeffs/radiation_damping/state_space/C/all']); end
             try obj.hydroData.hydro_coeffs.radiation_damping.state_space.D.all = h5load(filename, [name '/hydro_coeffs/radiation_damping/state_space/D/all']); end
         end
+        
+        function loadHydroData(obj, hydroData)
+            % Loads hydroData structure from matlab variable as alternative
+            % to reading the h5 file. Used in wecSimMCR
+            obj.hydroData = hydroData;
+            obj.cg        = hydroData.properties.cg';
+            obj.dispVol   = hydroData.properties.disp_vol;
+            obj.name      = hydroData.properties.name;
+        end
 
         function hydroForcePre(obj,w,waveDir,CIkt,CTTime,numFreq,dt,rho,g,waveType,waveAmpTime,iBod,numBod,ssCalc,nlHydro,B2B)
             % HydroForce Pre-processing calculations
@@ -121,7 +129,7 @@ classdef bodyClass<handle
             obj.hydroForce.linearHydroRestCoef = k .*rho .*g;
             obj.hydroForce.visDrag = diag(0.5*rho.*obj.viscDrag.cd.*obj.viscDrag.characteristicArea);
             obj.hydroForce.linearDamping = diag(obj.linearDamping);
-            obj.hydroForce.userDefinedFe = zeros(length(waveAmpTime(:,2)),6);   %initializing userDefinedFe for non user-defined cases
+            obj.hydroForce.userDefinedFe = zeros(length(waveAmpTime(:,2)),6);   %initializing userDefinedFe for non imported wave cases
             switch waveType
                 case {'noWave'}
                     obj.noExcitation()
@@ -135,10 +143,10 @@ classdef bodyClass<handle
                 case {'regularCIC'}
                     obj.regExcitation(w,waveDir,rho,g);
                     obj.irfInfAddedMassAndDamping(CIkt,CTTime,ssCalc,iBod,rho,B2B);
-                case {'irregular','irregularImport'}
+                case {'irregular','spectrumImport'}
                     obj.irrExcitation(w,numFreq,waveDir,rho,g);
                     obj.irfInfAddedMassAndDamping(CIkt,CTTime,ssCalc,iBod,rho,B2B);
-                case {'userDefined'}
+                case {'etaImport'}
                     obj.userDefinedExcitation(waveAmpTime,dt,waveDir,rho,g);
                     obj.irfInfAddedMassAndDamping(CIkt,CTTime,ssCalc,iBod,rho,B2B);
             end
@@ -148,7 +156,8 @@ classdef bodyClass<handle
             % Merge diagonal term of added mass matrix to the mass matrix
             % 1. Store the original mass and added-mass properties
             % 2. Add diagonal added-mass inertia to moment of inertia
-            % 3. Add the maximum diagonal traslational added-mass to body mass
+            % 3. Add the maximum diagonal traslational added-mass to body
+            % mass - this is not the correct description
             iBod = obj.bodyNumber;
             obj.hydroForce.storage.mass = obj.mass;
             obj.hydroForce.storage.momOfInertia = obj.momOfInertia;
@@ -297,24 +306,6 @@ classdef bodyClass<handle
                 error('Could not locate and open geometry file %s',obj.geometryFile)
             end
         end
-
-        function checkBemio(obj)
-            % Cjecks BEMIO version and normalization
-            if obj.bemioFlag == 1
-                try
-                    bemio_version = h5load(obj.h5File,'bemio_information/version');
-                catch
-                    bemio_version = '<1.1'
-                    warning('If BEMIO was not used to generate the h5 file, set body(i).bemioFlag = 0')
-                end
-                if strcmp(bemio_version,'1.1') == 0
-                    error(['bemio .h5 file for body ', obj.hydroData.properties.name, ' was generated using bemio version: ', bemio_version '. Please reprocess the hydrodynamic data with the latest version of bemio for te best results. Bemio can be downloaded or updated from https://github.com/WEC-Sim/bemio. You can override this error by specifying the ignoreH5Error variable in in the BodyClass initilization in the wecSimInputFile.'])
-                end
-                if obj.hydroData.simulation_parameters.scaled ~= false
-                    error(['bemio .h5 file for body ', obj.hydroData.properties.name, ' were scaled (i.e. simulation_parameters/scaled ~= false). Please reprocess the hydrodynamic data using the `scale=False` in bemio. Please see https://github.com/WEC-Sim/bemio for more information. You can override this error by specifying the ignoreH5Error variable in in the BodyClass initilization in the wecSimInputFile.m.'])
-                end
-            end
-        end
     end
 
     methods (Access = 'protected') %modify object = T; output = F
@@ -376,6 +367,8 @@ classdef bodyClass<handle
                 elseif obj.hydroData.simulation_parameters.wave_dir == waveDir
                     kernel = squeeze(kf(ii,1,:));
                     obj.userDefinedExcIRF = interp1(kt,kernel,min(kt):dt:max(kt));
+                else
+                    error('Default wave direction different from hydro database value. Wave direction (waves.waveDir) should be specified on input file.')
                 end
                 obj.hydroForce.userDefinedFe(:,ii) = conv(waveAmpTime(:,2),obj.userDefinedExcIRF,'same')*dt;
             end

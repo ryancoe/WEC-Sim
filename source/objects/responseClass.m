@@ -43,9 +43,9 @@ classdef responseClass<handle
                 end
                 if ~isempty(hspressure{ii})
                     obj.bodies(ii).cellPressures_time = hspressure{ii}.time;
-                    obj.bodies(ii).cellPressures_hydrostatic = hspressure{ii}.signals.values;
-                    obj.bodies(ii).cellPressures_waveLinear = wpressurenl{ii}.signals.values;
-                    obj.bodies(ii).cellPressures_waveNonLinear = wpressurel{ii}.signals.values;
+                    obj.bodies(ii).cellPressures_hydrostatic   = hspressure{ii}.signals.values;
+                    obj.bodies(ii).cellPressures_waveLinear    = wpressurel{ii}.signals.values;
+                    obj.bodies(ii).cellPressures_waveNonLinear = wpressurenl{ii}.signals.values;
                 end
             end
             % PTOs
@@ -90,7 +90,6 @@ classdef responseClass<handle
         
         function obj = loadMoorDyn(obj,numLines)            
             % Read MoorDyn outputs
-
             % load Lines.out
             filename = './mooring/Lines.out';
             fid = fopen(filename, 'r');
@@ -101,17 +100,22 @@ classdef responseClass<handle
             for icol=1:ncol
                eval(['obj.moorDyn.Lines.' header{icol} ' = data(:,' num2str(icol) ');']);
             end
+            fclose(fid);
             % load Line#.out
             for iline=1:numLines
                 eval(['obj.moorDyn.Line' num2str(iline) '=struct();']);
                 filename = ['./mooring/Line' num2str(iline) '.out'];
-                fid = fopen(filename);
-                header = strsplit(strtrim(fgetl(fid)));
-                data = dlmread(filename,'',1,0);
-                tmp = size(data);
-                ncol = tmp(2);clear tmp
-                for icol=1:ncol
-                    eval(['obj.moorDyn.Line' num2str(iline) '.' header{icol} ' = data(:,' num2str(icol) ');']);
+                try
+                    fid = fopen(filename);
+                    header = strsplit(strtrim(fgetl(fid)));
+                    data = dlmread(filename,'',1,0);
+                    tmp = size(data);
+                    ncol = tmp(2);clear tmp
+                    for icol=1:ncol
+                        eval(['obj.moorDyn.Line' num2str(iline) '.' header{icol} ' = data(:,' num2str(icol) ');']);
+                    end
+                catch
+                    fprintf('\n No moorDyn *.out file saved for Line%u\n',iline); 
                 end
             end
         end

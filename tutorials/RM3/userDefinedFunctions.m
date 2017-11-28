@@ -1,7 +1,11 @@
 %Example of user input MATLAB file for post processing
 
-%Plot wave surface elevation
-waves.plotEta();
+%Plot waves
+waves.plotEta(simu.rampTime);
+try 
+    waves.plotSpectrum();
+catch
+end
 
 %Plot heave response for body 1
 output.plotResponse(1,3);
